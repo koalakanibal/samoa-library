@@ -1,0 +1,144 @@
+/**
+
+  @variables
+---------------------------------------------------------
+  base/_vars.scss
+--------------------------------------------------------
+
+  Global variables are defined here.  Define your colors,
+  spacing and grid settings.
+
+-----------------------------------------------------  */
+
+$base-size: 16px;
+$size: 16px !default;
+
+
+
+/* @colors
+--------------------------------------------------------
+
+  All color variables are defined here.
+
+  We use real color names here.  Although naming something
+  like 'brand' is in fact more generic and reusable, we've
+  found that you end up creating variables like $brand-2,
+  $brand-alt, $brand-complimentary etc.  While coding,
+  it's too easy to forget what those mean.
+
+  If the design changes drastically and the brand changes
+  from, let's say, blue to green, just do a global
+  find/replace - that's what text editors are for.
+
+------------------------------------------------------ */
+
+
+// Colors
+//
+$color__black: #000;
+$color__grey: #636363;
+$color__grey--light: #DDD;
+$color__offwhite: #F3F3F3;
+$color__white: #fff;
+
+$color__green: #a2bb60;
+$color__red: #B82346;
+$color__orange: #C56531;
+$color__sky-blue: #A4DAFA;
+$color__blue: #0779B4;
+$color__yellow: #E7C339;
+$color__green: #AABE3B;
+$color__navy: #1F3655;
+
+
+$color__error: $color__red;
+$color__warning: $color__yellow;
+$color__info: $color__blue;
+$color__success: $color__green;
+
+$color-primary: $color__blue;
+$color-active: $color__blue;
+
+
+///FONTS COLOR
+$color-font-primary: $color__grey;
+$color-font-disabled: $color__grey--light;
+$color-font-link: $color__blue;
+
+////BUTTONS COLOR
+$color-btn: $color__blue;
+$color-btn-hover: #3994C3;
+$color-btn-disabled: #83BCD9;
+$color-font-btn: $color__white;
+$color-font-btn-disabled: #C1DDEC;
+//$border-color: $color__blue;
+
+$color-btn-secondary: $color__white;
+$color-btn-secondary-hover: #3994C3;
+$color-btn-secondary-disabled: #83BCD9;
+$color-btn-font-secondary: $color__blue;
+$border-color: $color__blue;
+
+//BTN PANIC
+$color-btn-panic: $color__red;
+$color-btn-panic-hover: #C64F6B;
+$color-btn-panic-disabled: #DB91A2;
+$color-btn-font-panic: $color__white;
+$border-panic-color: $color__red;
+
+//BORDER
+$border-color: $color__grey;
+
+/* @fonts variables
+--------------------------------------------------------
+
+  Define weight for text.
+
+------------------------------------------------------ */
+
+$light: 300;
+$regular: 400;
+$bold: 700;
+
+/*--------------------------------------------------------
+
+  Define sizes for text.
+
+------------------------------------------------------ */
+$font-disclaimer: 26px;
+$font-very-big: 22px;
+$font-big: 18px;
+$font-regular: 14px;
+$font-small: 12px;
+
+
+/* @breakpoints
+---------------------------------------------------------
+
+  Define global breakpoints as XS, S, M, L, XL
+
+--------------------------------------------------------- */
+$XS: 600px;
+$S: 840px;
+$M: 1024px;
+$L: 1280px;
+$XL: 1600px;
+
+
+
+// Define individual variables
+
+
+/* @global spacing unit
+---------------------------------------------------------
+
+  Define an em value for $unit.  $unit is a helpful little
+  variable that serves to keep your spacing consistent.
+
+  Most often, 1 $unit is equal to your baseline height.  So
+  if your baseline height is 1.125ems (which is 18px), that's
+  the value of 1 $unit.
+
+--------------------------------------------------------- */
+
+$unit: 1.125em;

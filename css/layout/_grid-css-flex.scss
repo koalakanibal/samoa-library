@@ -1,0 +1,27 @@
+//CSS BASED GRID
+//FLEX
+@mixin grid-css-flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -$grid-space;
+  box-sizing: border-box;
+  width: calc(100% + #{$grid-space});
+  margin-bottom: $grid-space;
+}
+
+@mixin grid-css-flex-item($i) {
+  height: 300px;
+  background: mediumpurple;
+  margin-left: $grid-space;
+
+  @for $i from 1 through $i {
+    flex: calc(100% / #{$i});
+  }
+}
+
+.grid-css-flex {
+  @include grid-css-flex;
+  > * {
+    @include grid-css-flex-item(9);
+  }
+}

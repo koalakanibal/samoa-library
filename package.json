@@ -1,0 +1,23 @@
+{
+  "name": "matrix",
+  "version": "1.0.0",
+  "description": "Styles library",
+  "main": "index.html",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "irene",
+  "license": "ISC",
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "node-sass": "^4.9.0"
+  },
+  "devDependencies": {
+    "grunt": "1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-watch": "1.0.0",
+    "grunt-sass": "2.0.0"
+  }
+}

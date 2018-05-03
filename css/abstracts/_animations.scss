@@ -1,0 +1,11 @@
+@include keyframes(dropdown-collapse) {
+  0% {
+    border: 1px solid #dbd8bd;
+  }
+  99% {
+    border: 1px solid #dbd8bd;
+  }
+  100% {
+    border: 0;
+  }
+}

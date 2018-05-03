@@ -1,0 +1,95 @@
+/**
+
+  @text
+--------------------------------------------------------
+  elements/_text.scss
+--------------------------------------------------------
+
+  Some basic styles to paragraphs and
+  inline styles
+
+-----------------------------------------------------  */
+
+/* @headers
+--------------------------------------------------------
+h1 h2 h3 h4
+ */
+
+h1,
+.disclaimer-text,
+.header-1 {
+  @include font-size($font-disclaimer);
+}
+
+h2,
+.very-big-text,
+.header-2 {
+  @include font-size($font-very-big);
+}
+
+h3,
+.big-text ,
+.header-3 {
+  @include font-size($font-big);
+}
+
+h4,
+.big-text ,
+.header-4 {
+  @include font-size($font-regular);
+}
+
+// Special headings
+.header-1,
+.header-2,
+.header-3,
+.header-4 {
+  color: $color__blue;
+  font-weight: $bold;
+}
+
+
+/* @paragraphs
+--------------------------------------------------------
+
+  Example: Paragraphs
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+--------------------------------------------------------  */
+
+p,
+.regular-text {
+  @include font-size($font-regular);
+  margin-bottom: 1em;
+  line-height: 1.25*$unit;
+}
+
+.small-text {
+  @include font-size($font-small);
+}
+
+
+
+/* @inline
+--------------------------------------------------------
+
+  Common inline elements
+
+  Example: inline elements
+  <p>Lorem Ipsum is <b>bold</b> text of the <strong>strong</strong> printing and typesetting industry. Lorem Ipsum is <i>italic</i> simply dummy text <em>emphasized</em> of the printing and typesetting industry.</p<
+
+-------------------------------------------------------- */
+
+b,
+strong {
+  // NOTE: use bold font-face if available instead of 'font-weight: bold'
+  font-weight: $bold;
+}
+
+
+i,
+em {
+  // NOTE: use italic font-face if available instead of 'font-style: italic'
+  font-style: italic;
+}

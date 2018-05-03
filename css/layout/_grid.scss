@@ -1,0 +1,51 @@
+// set grid space
+$grid-space: 1.2rem;
+$col-number: 2;
+
+
+//DISPLAY GRID
+/*.grid-display {
+  display: grid;
+  //grid-template-columns:;
+  grid-gap: 10px;
+  background-color: #fff;
+  color: #444;
+}*/
+
+.site {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 50px 100% 50px;
+
+  &__header {
+    grid-column: span 12;
+  }
+
+  &__sidebar {
+    grid-column: span 2;
+  }
+
+  &__main {
+    grid-column: span 10;
+  }
+
+  &__footer {
+    grid-column: span 12;
+    margin-bottom: auto;
+  }
+}
+
+
+
+@include media(S) {
+  $col-number: 4;
+}
+
+@include media(M) {
+  $col-number: 8;
+}
+
+
+@include media(L) {
+  $col-number: 12;
+}

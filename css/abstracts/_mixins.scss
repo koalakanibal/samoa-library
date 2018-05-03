@@ -1,0 +1,159 @@
+/**
+ * Convert font-size from px to rem with px fallback
+ *
+ * @param $size - the value in pixel you want to convert
+ *
+ * e.g. p {@include fontSize(12px);}
+ *
+ */
+
+//REM calculation with px fallback
+@function calculate-rem($size) {
+  $rem-size: $size / 16px;
+  @return $rem-size * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculate-rem($size);
+}
+
+//Text ellipsis
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin dont-truncate {
+  white-space: normal;
+  overflow: auto;
+  text-overflow: unset;
+}
+
+//TEXT ALIGNEMENT
+//Mixin
+@mixin align($value) {
+  text-align: $value;
+}
+
+//ALIGN
+$alignments: left, center, right;
+
+@each $align in $alignments {
+  .align-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+//FLOAT
+$floats: left, right;
+
+@each $float in $floats {
+  .float-#{$float} {
+    float: #{$float};
+  }
+}
+
+
+//SCROLL
+$scrolls: visible, auto, hidden;
+
+@each $scroll in $scrolls {
+  .scroll-#{$scroll} {
+    overflow: #{$scroll};
+  }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
+  border-top-left-radius: $topleft;
+  border-top-right-radius: $topright;
+  border-bottom-right-radius: $bottomright;
+  border-bottom-left-radius: $bottomleft;
+  -webkit-border-top-left-radius: $topleft;
+  -webkit-border-top-right-radius: $topright;
+  -webkit-border-bottom-right-radius: $bottomright;
+  -webkit-border-bottom-left-radius: $bottomleft;
+  -moz-border-radius-topleft: $topleft;
+  -moz-border-radius-topright: $topright;
+  -moz-border-radius-bottomright: $bottomright;
+  -moz-border-radius-bottomleft: $bottomleft;
+}
+
+
+//gradient border
+
+@mixin gradient-border($color1, $color2, $border-width, $direction) {
+  border: none;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(#{$direction}, $color1 0%, $color2 100%), linear-gradient(#{$direction}, $color1 0%, $color2 100%);
+  @if $direction == 'to right' or $direction == 'to left' {
+    @if $direction == 'to right' {
+      border-left: $border-width solid $color1;
+      border-right: $border-width solid $color2;
+    } @else {
+      border-left: $border-width solid $color2;
+      border-right: $border-width solid $color1;
+    }
+    background-position: 0 0, 0 100%;
+    background-size: 100% $border-width;
+  }
+
+  @if $direction == 'to top' or $direction == 'to bottom' {
+    @if $direction == 'to top' {
+      border-top: $border-width solid $color2;
+      border-bottom: $border-width solid $color1;
+    } @else {
+      border-top: $border-width solid $color1;
+      border-bottom: $border-width solid $color2;
+    }
+    background-position: 0 0, 100% 0;
+    background-size: $border-width 100%;
+  }
+}
+
+/*
+
+Animation mixin
+    Example usage:
+
+ */
+
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
+
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
+
+    @if $i < $max {
+      $animations: #{$animations + ", "};
+    }
+  }
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
+}

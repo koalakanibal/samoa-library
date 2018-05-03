@@ -1,0 +1,32 @@
+
+//special layout for network ordering modal
+//CSS BASED GRID
+//FLOAT / INLINE
+@mixin grid-css-float {
+  @include clearfix;
+  margin-left: -$grid-space;
+  box-sizing: border-box;
+  width: calc(100% + #{$grid-space});
+  margin-bottom: $grid-space;
+}
+
+@mixin grid-css-float-item($i) {
+  height: 300px;
+  float: left;
+  background: lightpink;
+  margin-left: $grid-space;
+
+  @for $i from 1 through $i {
+    width: calc((100% - #{$grid-space} * #{$i}) / #{$i});
+  }
+}
+
+
+//----APPLICATION--//
+.grid-css-float {
+  @include grid-css-float;
+
+  > * {
+    @include grid-css-float-item(12);
+  }
+}
