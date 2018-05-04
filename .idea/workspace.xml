@@ -5,8 +5,6 @@
       <change beforePath="" afterPath="$PROJECT_DIR$/../hungryk/.idea/.name" />
       <change beforePath="$PROJECT_DIR$/../hungryk/.idea/matrix.iml" afterPath="$PROJECT_DIR$/../hungryk/.idea/hungryk.iml" />
       <change beforePath="$PROJECT_DIR$/../hungryk/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../hungryk/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../hungryk/package-lock.json" afterPath="$PROJECT_DIR$/../hungryk/package-lock.json" />
-      <change beforePath="$PROJECT_DIR$/../hungryk/package.json" afterPath="$PROJECT_DIR$/../hungryk/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -329,12 +327,12 @@
       <workItem from="1525096531528" duration="5848000" />
       <workItem from="1525356472365" duration="4113000" />
       <workItem from="1525421729114" duration="99000" />
-      <workItem from="1525440990862" duration="476000" />
+      <workItem from="1525440990862" duration="508000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70452000" />
+    <option name="totallyTimeSpent" value="70484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="188" y="23" width="1278" height="810" extended-state="0" />
