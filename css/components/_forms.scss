@@ -302,15 +302,17 @@ select {
   &__item {
     @include font-size($font-regular);
     @include truncate;
+    border-bottom: 1px solid $color__grey--light;
     display: block;
-    height: 1.625rem;
-    line-height: 1.625rem;
-  }
-
-  &__item {
+    height: 2rem;
+    line-height: 2rem;
     //@include single-transition(background-color,.26s,cubic-bezier(0.17, 0.15, 0.53, 0.96),0s);
     font-weight: $regular;
     padding: 0 10px;
+
+    &:last-child {
+      border-bottom: 0;
+    }
 
     &:hover,
     &--highlighted {
@@ -319,6 +321,7 @@ select {
       cursor: pointer;
     }
   }
+
 }
 
 
@@ -340,17 +343,33 @@ select {
     max-height: 0;
   }
 
-  &--disabled {
+  &.dropdown--disabled {
+    .input-text__label {
+      color: $color-font-disabled;
+    }
     .dropdown-button {
       //@include background-image(none);
-      background: $color-btn-disabled;
-      color: $color-font-disabled;
+      //background: $color-btn-disabled;
+      border-color: $color__grey--light;
+      color: $color__grey--light;
       pointer-events: none;
 
       /*&::before {
         color: $primary-button-font-color;
         background: $medium-color;
       }*/
+    }
+  }
+
+  &.dropdown--error {
+    .input-text__label {
+      color: $color__error;
+    }
+    .dropdown-button {
+      //@include background-image(none);
+      //background: $color-btn-disabled;
+      border-color: $color__error;
+      color: $color__error;
     }
   }
 }
@@ -392,6 +411,41 @@ textarea {
   &.textarea--l {
     font-size: 1.5rem;
   }
+}
+
+
+.text-area {
+  @include font-size($font-regular);
+  //background-color: $bg-form-color;
+  border: 1px solid $border-color;
+  color: $color-font-primary;
+  display: inline-block;
+  font-weight: $regular;
+  line-height: 1.2rem;
+  padding: 6px;
+  width: 100%;
+
+  &:focus,
+  &:active {
+    border-color: $color-active
+  }
+
+  &.resize-none {
+    resize: none;
+  }
+
+  &.resize-vertical {
+    resize: vertical;
+  }
+
+  &.resize-horizontal {
+    resize: horizontal;
+  }
+
+  &--error {
+    border-color: $color__error;
+  }
+
 }
 
 
@@ -440,6 +494,111 @@ input[type=radio] {
 }
 
 
+.radio {
+  @include font-size($font-regular);
+  display: inline-block;
+  line-height: 1.5rem;
+  position: relative;
+  width: 100%;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__input {
+    cursor: pointer;
+    height: 1.2rem;
+    left: 0;
+    position: absolute;
+    top: .2rem;
+    width: 1.2rem;
+    z-index: 0;
+    opacity: 0;
+  }
+
+  // Unchecked
+  &__label {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: $light;
+    padding: 0 0 0 1.6rem;
+    //Not working on react
+    &::before {
+      @include transition(all .2s linear 0s);
+      @include border-radius(50%);
+      //@include box-sizing(border-box);
+      background-color: #fff;
+      border: 1px solid $border-color;
+      //box-shadow: $input-shadow;
+      content: '';
+      height: 1.375rem;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 1.375rem;
+      z-index: 1;
+    }
+
+    > span {
+      display: inline-block;
+      //line-height: 2.1rem;
+    }
+  }
+
+  // Checked //Not working on react
+  &__input:checked + .radio__label {
+    font-weight: $bold;
+
+    &::before {
+      background-color: $color__white;
+      border: 5px solid $color-primary;
+      box-shadow: none;
+    }
+
+    &::after {
+      border-color: #fff;
+    }
+  }
+
+  &--disabled {
+    .radio__label {
+      color: $color-font-disabled;
+      pointer-events: none;
+
+      &::before {
+        background-color: $color__grey--light;
+        border-color: $color__grey--light;
+      }
+    }
+  }
+
+  //mini version
+
+  &--mini {
+    .radio__label {
+      @include font-size($font-small);
+      padding-left: 1.6rem;
+
+      &:before {
+        height: 1.125rem;
+        width: 1.125rem;
+        top: 3px;
+      }
+    }
+  }
+}
+
+@-moz-document url-prefix() {
+  .radio__label::after {
+    height: .69rem;
+    left: 0.334rem;
+    position: absolute;
+    top: 0.367rem;
+    width: .69rem;
+  }
+}
+
+
 
 
 
@@ -458,29 +617,107 @@ input[type=radio] {
 
 ------------------------------------------------------ */
 
-input[type=checkbox] {
-  -webkit-appearance:none;
-  width: 1em;
-  height: 1em;
-  padding: 0;
-  border: 1px solid #444;
-  background: transparent;
-  &:checked {
-    background: #222;
+.checkbox {
+  @include font-size($font-regular);
+  display: inline-block;
+  line-height: 1.5rem;
+  position: relative;
+  width: 100%;
+
+  &__input {
+    cursor: pointer;
+    height: 1.2rem;
+    left: 0;
+    position: absolute;
+    top: .2rem;
+    width: 1.2rem;
+    z-index: 0;
+    opacity: 0;
+  }
+
+  // Unchecked
+  &__label {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: $light;
+    padding: 0 0 0 1.8rem;
+
+    &::before {
+      @include border-radius(.25rem);
+      @include transition(all .14s cubic-bezier(.4, 0, .2, 1) 0s);
+      background-color: #fff;
+      border: 1px solid $border-color;
+      //box-shadow: $input-shadow;
+      content: '';
+      height: 1.25rem;
+      left: 0;
+      position: absolute;
+      top: 1px;
+      width: 1.25rem;
+      z-index: 1;
+    }
+
+    &::after {
+      @include rotate(45);
+      @include transition(all .14s cubic-bezier(.4, 0, .2, 1) 0s);
+      border-bottom: 2px solid transparent;
+      border-right: 2px solid transparent;
+      content: '';
+      height: 10px;
+      left: 7px;
+      position: absolute;
+      top: 5px;
+      width: 5px;
+      z-index: 2;
+    }
+
+    > span {
+      display: inline-block;
+      //height: 2.1rem;
+    }
+  }
+
+  // Checked //Not working on react
+  &__input:checked + .checkbox__label {
+    font-weight: $bold;
+
+    &::before {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+
+    &::after {
+      border-color: #fff;
+    }
+  }
+
+  &--disabled {
+    .checkbox__label {
+      color: $color-font-disabled;
+      pointer-events: none;
+
+      &::before {
+        background-color: $color__grey--light;
+        border-color: $border-color;
+      }
+    }
+
+    .checkbox__input:checked + .checkbox__label {
+      color: $color-font-disabled;
+      pointer-events: none;
+
+      &::before {
+        background-color: $color-btn-disabled;
+        border-color: $color-font-disabled;
+      }
+
+      &::after {
+        border-color: $color-font-disabled;
+      }
+    }
   }
 }
 
-.label--checkbox {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  padding-left: 1em;
-  input {
-    position: absolute;
-    top: .7em;
-    left: 0;
-  }
-}
 
 
 
