@@ -1,0 +1,146 @@
+/* @checkbox inputs
+--------------------------------------------------------
+
+  Base styling for checkbox inputs.  Checkboxes are surrounded
+  by a label for better click targets.
+
+  Example: Checkbox
+  <label class="label--checkbox" for="checkbox-1"><input id="checkbox-1" type="checkbox" value="yes"> Checkbox label</label>
+
+  Example: Checkbox with super-long label
+  <label class="label--checkbox" for="checkbox-3"><input id="checkbox-3" type="checkbox" value="yes"> Checkbox label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
+
+
+------------------------------------------------------ */
+
+/**********************************/
+/******* Basic fallback style *****/
+/**********************************/
+input[type=checkbox] {
+  -webkit-appearance:none;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  border: 1px solid $color-border;
+  background: transparent;
+  &:checked {
+    background: $color-active;
+  }
+}
+
+.label--checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1em;
+  input {
+    position: absolute;
+    top: .7em;
+    left: 0;
+  }
+}
+
+/**********************************/
+/******* Checkbox custom style *****/
+/**********************************/
+.checkbox {
+  @include font-size($font-small);
+  display: inline-block;
+  line-height: 1.5rem;
+  position: relative;
+  width: 100%;
+
+  &__input {
+    cursor: pointer;
+    height: 1.2rem;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    top: .2rem;
+    width: 1.2rem;
+    z-index: 0;
+  }
+
+  // Unchecked
+  &__label {
+    @include font-size($font-regular);
+    cursor: pointer;
+    display: inline-block;
+    font-weight: $light;
+    padding: 0 0 0 1.8rem;
+
+    &::before {
+      @include border-radius(.25rem);
+      @include transition(all .14s cubic-bezier(.4, 0, .2, 1) 0s);
+      background-color: #fff;
+      border: 1px solid $color-border;
+      //box-shadow: $input-shadow;
+      content: '';
+      height: 1.25rem;
+      left: 0;
+      position: absolute;
+      top: 1px;
+      width: 1.25rem;
+      z-index: 1;
+    }
+
+    &::after {
+      @include rotate(45);
+      @include transition(all .14s cubic-bezier(.4, 0, .2, 1) 0s);
+      border-bottom: 2px solid transparent;
+      border-right: 2px solid transparent;
+      content: '';
+      height: 10px;
+      left: 7px;
+      position: absolute;
+      top: 5px;
+      width: 5px;
+      z-index: 2;
+    }
+
+    > span {
+      display: inline-block;
+      //height: 2.1rem;
+    }
+  }
+
+  // Checked //Not working on react
+  &__input:checked + .checkbox__label {
+    font-weight: $regular;
+
+    &::before {
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+
+    &::after {
+      border-color: #fff;
+    }
+  }
+
+  &--disabled {
+    .checkbox__label {
+      color: $color-font-disabled;
+      pointer-events: none;
+
+      &::before {
+        background-color: $color__grey--light;
+        border-color: $color-border;
+      }
+    }
+
+    .checkbox__input:checked + .checkbox__label {
+      color: $color-font-disabled;
+      pointer-events: none;
+
+      &::before {
+        background-color: $color-btn-disabled;
+        border-color: $color-font-disabled;
+      }
+
+      &::after {
+        border-color: $color-font-disabled;
+      }
+    }
+  }
+}

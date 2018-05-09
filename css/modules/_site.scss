@@ -15,5 +15,42 @@
 ------------------------------------------------------ */
 
 .site {
+  @include clearfix;
+  display: block;
+}
+
+
+.site-header {
+
+}
+
+/*
+
+  @site-nav
+--------------------------------------------------------
+
+  The main site navigation.
+
+-----------------------------------------------------  */
+
+.site-nav {
+  &__item {
+    display: block;
+  }
+}
+
+.site-sidebar {
+
+}
+
+.site-main {
+
+}
+
+.site-footer {
+
+}
+
+.site-credits {
 
 }

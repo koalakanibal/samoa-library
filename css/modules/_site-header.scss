@@ -10,9 +10,7 @@
 ------------------------------------------------------ */
 
 .site-header {
-  @include clearfix();
-  padding: 1*$unit 0;
-  border-bottom: 1px solid $color__grey--light;
+  
 }
 
 
@@ -72,21 +70,3 @@
   The main site navigation.
 
 -----------------------------------------------------  */
-
-.site-nav {
-  text-align: center;
-  @include bp-at-least($breakpoint__md) {
-    float: right;
-  }
-  a {
-    display: inline-block;
-    height: 3*$unit;
-    line-height: 3*$unit;
-    padding: 0 .5em;
-    margin-left: .5*$unit;
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-}

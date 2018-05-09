@@ -41,117 +41,53 @@
 
   <body>
 
-    <div class="site">
+  <div class="site grid">
+    <header class="site-header col-xs-2">
+      <a class="branding" href="/">
+        <!--<img class="branding__logo" src="images/fpo-logo.png" alt="Site Name">-->
+        <h1 class="branding__wordmark">Site Name</h1>
+      </a>
+    </header>
+    <aside class="site-sidebar col-xs-2 col-l-4">
 
-      <header class="site-header" role="banner">
-        <div class="container">
-          <a class="branding" href="/">
-            <!--<img class="branding__logo" src="images/fpo-logo.png" alt="Site Name">-->
-            <h1 class="branding__wordmark">Site Name</h1>
-          </a>
-          <nav class="site-nav">
-            <a href="index.html">Home</a>
-            <a href="example-grids.html">Grids</a>
-            <a href="example-modules.html">Modules</a>
-            <a href="example-forms.html">Forms</a>
-            <a href="http://skyline.is">Skyline</a>
-          </nav>
-        </div>
-      </header>
-      <main class="site-main" role="main">
+      <nav class="site-nav">
+        <a class="site-nav__link" href="index.html">Home</a>
+        <a class="site-nav__link" href="grids.html">Grids</a>
+        <a class="site-nav__link" href="example-modules.html">Modules</a>
+        <a class="site-nav__link" href="example-forms.html">Forms</a>
+      </nav>
+    </aside>
+    <main class="site-main col-xs-2 col-l-8" role="main">
 
         <h3>HTML+FLOAT BASED GRID</h3>
-      <div class="grid grid-html-float">
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
-        <div class="grid-item--1">html+float</div>
+      <div class="grid">
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
       </div>
-
-        <h3>CSS+FLOAT BASED GRID</h3>
-        <div class="grid grid-css-float">
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-          <div class="grid-item--1">css+float</div>
-        </div>
-
-
-        <h3>HTML+FLEX BASED GRID</h3>
-      <div class="grid-html-flex">
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-        <div class="grid-item--1">html+flex</div>
-      </div>
-
-        <h3>CSS+FLEX BASED GRID</h3>
-      <div class="grid-css-flex">
-        <div class="kk">css+flex</div>
-        <div class="kkk">css+flex</div>
-        <div class="">css+flex</div>
-        <div class="">css+flex</div>
-        <div class="">css+flex</div>
-        <div class="">css+flex</div>
-        <div class="">css+flex</div>
-        <div class="">css+flex</div>
-        <div class="">css+flex</div>
-        <div class="grid-item">css+flex</div>
-        <div class="grid-item">css+flex</div>
-        <div class="grid-item">css+flex</div>
-      </div>
-
-        <h3>CSS+GRID BASED GRID</h3>
-        <div class="grid-display">
-            <div class="box a">A</div>
-            <div class="box b">B</div>
-            <div class="box c">C</div>
-            <div class="box d">D</div>
-            <div class="box e">E</div>
-            <div class="box f">F</div>
-        </div>
-
-
-
-
-
       </main>
 
-      <footer class="site-footer">
-        <div class="container">
-          <a class="branding" href="/">Site Name Here</a>
-          <nav class="site-nav">
+      <footer class="site-footer col-xs-2">
+        <div class="">
+          <a class="branding col-1 col-l-3" href="/">Site Name Here</a>
+          <nav class="site-nav col-1 col-l-9">
             <a href="index.html">Home</a>
             <a href="example-grids.html">Grids</a>
             <a href="example-modules.html">Modules</a>
             <a href="example-forms.html">Forms</a>
-            <a href="http://skyline.is">Skyline</a>
+
           </nav>
-          <small class="site-credits">&copy; 2014 Site Name</small>
+          <small class="site-credits col-xs-2">&copy; 2014 Site Name</small>
         </div>
       </footer>
 

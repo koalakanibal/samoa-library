@@ -1,0 +1,62 @@
+/* @textareas
+--------------------------------------------------------
+
+  Base styling for textareas
+
+  Textareas can have --resize classes
+  for different sizes
+
+  Example: Textarea
+  <textarea class="text-area" placeholder="Text area placeholder" rows="4"></textarea>
+
+
+------------------------------------------------------ */
+/**********************************/
+/******* Basic fallback style *****/
+/**********************************/
+textarea {
+  width: 100%;
+  min-height: 6em;
+  padding: 1em;
+  border: solid 1px $color-border;
+  @extend %serif--light;
+  &:focus {
+    outline: none;
+  }
+}
+
+/**********************************/
+/******* Custom style *****/
+/**********************************/
+.text-area {
+  @include font-size($font-regular);
+  //background-color: $bg-form-color;
+  border: 1px solid $color-border;
+  color: $color-font-primary;
+  display: inline-block;
+  font-weight: $regular;
+  line-height: 1.2rem;
+  padding: 6px;
+  width: 100%;
+
+  &:focus,
+  &:active {
+    border-color: $color-active
+  }
+
+  &.resize-none {
+    resize: none;
+  }
+
+  &.resize-vertical {
+    resize: vertical;
+  }
+
+  &.resize-horizontal {
+    resize: horizontal;
+  }
+
+  &--error {
+    border-color: $color__error;
+  }
+}

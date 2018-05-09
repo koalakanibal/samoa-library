@@ -22,7 +22,7 @@
 
 ------------------------------------------------------ */
 
-$container__max-width: 70em; // restricts width
+$container__max-width: calc(100% - $base-size); // restricts width
 
 .container {
   @include clearfix();

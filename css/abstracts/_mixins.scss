@@ -1,15 +1,12 @@
-/**
- * Convert font-size from px to rem with px fallback
- *
- * @param $size - the value in pixel you want to convert
- *
- * e.g. p {@include fontSize(12px);}
- *
- */
+/* Mixin font-size
+--------------------------------------------------------
 
-//REM calculation with px fallback
+  REM calculation with px fallback
+  Example: @include font-size(15px);
+
+------------------------------------------------------ */
 @function calculate-rem($size) {
-  $rem-size: $size / 16px;
+  $rem-size: $size / $base-size;
   @return $rem-size * 1rem;
 }
 
@@ -18,7 +15,13 @@
   font-size: calculate-rem($size);
 }
 
-//Text ellipsis
+/* Mixin text ellipsis
+--------------------------------------------------------
+
+  Example: @include truncate;
+           @include dont-truncate;
+
+------------------------------------------------------ */
 @mixin truncate {
   white-space: nowrap;
   overflow: hidden;
@@ -31,100 +34,77 @@
   text-overflow: unset;
 }
 
-//TEXT ALIGNEMENT
-//Mixin
-@mixin align($value) {
+/* Mixin text alignment
+--------------------------------------------------------
+
+  Example: @include text-align(right);
+
+------------------------------------------------------ */
+
+@mixin text-align($value) {
   text-align: $value;
 }
 
-//ALIGN
-$alignments: left, center, right;
 
-@each $align in $alignments {
-  .align-#{$align} {
-    text-align: #{$align};
-  }
-}
+/* Mixin borders
+--------------------------------------------------------
+  Can be equal or different
+  Example: @include border-radius(3px);
+           @include border-radius(1px 0 20px 3px);
 
-//FLOAT
-$floats: left, right;
-
-@each $float in $floats {
-  .float-#{$float} {
-    float: #{$float};
-  }
-}
-
-
-//SCROLL
-$scrolls: visible, auto, hidden;
-
-@each $scroll in $scrolls {
-  .scroll-#{$scroll} {
-    overflow: #{$scroll};
-  }
-}
-
-@mixin border-radius($radius) {
+------------------------------------------------------ */
+@mixin border-radius($radius...) {
   border-radius: $radius;
   -webkit-border-radius: $radius;
   -moz-border-radius: $radius;
 }
 
-@mixin border-radii($topleft, $topright, $bottomright, $bottomleft) {
-  border-top-left-radius: $topleft;
-  border-top-right-radius: $topright;
-  border-bottom-right-radius: $bottomright;
-  border-bottom-left-radius: $bottomleft;
-  -webkit-border-top-left-radius: $topleft;
-  -webkit-border-top-right-radius: $topright;
-  -webkit-border-bottom-right-radius: $bottomright;
-  -webkit-border-bottom-left-radius: $bottomleft;
-  -moz-border-radius-topleft: $topleft;
-  -moz-border-radius-topright: $topright;
-  -moz-border-radius-bottomright: $bottomright;
-  -moz-border-radius-bottomleft: $bottomleft;
+/* Mixin hidden
+--------------------------------------------------------
+  Remove elements but still in the DOM
+  Example: @include hidden;
+
+------------------------------------------------------ */
+@mixin hidden {
+  visibility: hidden;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Mixin not-displayed
+--------------------------------------------------------
+  Remove elements
+  Example: @include hidden;
+
+------------------------------------------------------ */
+@mixin not-displayed {
+  display: none;
+  visibility: hidden;
 }
 
 
-//gradient border
+/* Mixin Animation
+--------------------------------------------------------
+  1- KEYFRAME
+    Example:
+        @include keyframe(fadeout) {
+          0% {
+              opacity: 1;
+          }
 
-@mixin gradient-border($color1, $color2, $border-width, $direction) {
-  border: none;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(#{$direction}, $color1 0%, $color2 100%), linear-gradient(#{$direction}, $color1 0%, $color2 100%);
-  @if $direction == 'to right' or $direction == 'to left' {
-    @if $direction == 'to right' {
-      border-left: $border-width solid $color1;
-      border-right: $border-width solid $color2;
-    } @else {
-      border-left: $border-width solid $color2;
-      border-right: $border-width solid $color1;
-    }
-    background-position: 0 0, 0 100%;
-    background-size: 100% $border-width;
-  }
+          100% {
+              opacity: 0;
+          }
+      }
 
-  @if $direction == 'to top' or $direction == 'to bottom' {
-    @if $direction == 'to top' {
-      border-top: $border-width solid $color2;
-      border-bottom: $border-width solid $color1;
-    } @else {
-      border-top: $border-width solid $color1;
-      border-bottom: $border-width solid $color2;
-    }
-    background-position: 0 0, 100% 0;
-    background-size: $border-width 100%;
-  }
-}
+  2- ANIMATION
+    Example
+    @include animation(fadeOut 10s linear forward)
 
-/*
-
-Animation mixin
-    Example usage:
-
- */
-
+------------------------------------------------------ */
 
 @mixin keyframes($animationName) {
   @-webkit-keyframes #{$animationName} {
@@ -158,13 +138,13 @@ Animation mixin
   animation:         $animations;
 }
 
-/*
-
-Transition mixin
+/* Mixin Transition
+--------------------------------------------------------
+ Transition mixin
     Example usage:
      @include transition(color .3s ease);
 
- */
+------------------------------------------------------ */
 
 @mixin transition($args...) {
   -webkit-transition: $args;
@@ -174,14 +154,19 @@ Transition mixin
   transition: $args;
 }
 
-/*
-
-Transform mixin
+/* Mixin Transition
+--------------------------------------------------------
+1- Generic transform
+  2- Rotate
     Example usage:
      @include rotate(45);
 
- */
+  3- Scale
+  4- Translate
+  5- Skew
+  6- Transform-origin
 
+------------------------------------------------------ */
 
 // generic transform
 @mixin transform($transforms) {
@@ -210,7 +195,7 @@ Transform mixin
 }
 //transform origin
 @mixin transform-origin ($origin) {
-  moz-transform-origin: $origin;
+  -moz-transform-origin: $origin;
   -o-transform-origin: $origin;
   -ms-transform-origin: $origin;
   -webkit-transform-origin: $origin;

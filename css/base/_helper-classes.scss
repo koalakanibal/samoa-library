@@ -1,0 +1,151 @@
+/* Text align class
+--------------------------------------------------------
+
+  Example: .align-left;
+
+------------------------------------------------------ */
+$alignments: left, center, right;
+
+@each $align in $alignments {
+  .align-#{$align} {
+    text-align: #{$align};
+  }
+}
+
+/* Float class
+--------------------------------------------------------
+
+  Example: .float-left;
+
+------------------------------------------------------ */
+$floats: left, right;
+
+@each $float in $floats {
+  .float-#{$float} {
+    float: #{$float};
+  }
+}
+/* Scroll class
+--------------------------------------------------------
+
+  Example: .float-left;
+
+------------------------------------------------------ */
+$scrolls: visible, auto, hidden;
+
+@each $scroll in $scrolls {
+  .scroll-#{$scroll} {
+    overflow: #{$scroll};
+  }
+}
+
+/* Spacing margins
+--------------------------------------------------------
+
+  Example: .mt-3, pb-2
+  We have -0 value to remove margin/padding
+
+------------------------------------------------------ */
+.m {
+  &t{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        margin-top: ($i) * $base-size;
+      }
+    }
+  }
+
+  &b{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        margin-bottom: ($i) * $base-size;
+      }
+    }
+  }
+
+  &r{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        margin-right: ($i) * $base-size;
+      }
+    }
+  }
+
+  &l{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        margin-left: ($i) * $base-size;
+      }
+    }
+  }
+
+  &all {
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        margin: ($i) * $base-size;
+      }
+    }
+  }
+}
+
+.p {
+  &t{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        padding-top: ($i) * $base-size;
+      }
+    }
+  }
+
+  &b{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        padding-bottom: ($i) * $base-size;
+      }
+    }
+  }
+
+  &r{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        padding-right: ($i) * $base-size;
+      }
+    }
+  }
+
+  &l{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        padding-left: ($i) * $base-size;
+      }
+    }
+  }
+
+  &all{
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        padding: ($i) * $base-size;
+      }
+    }
+  }
+}

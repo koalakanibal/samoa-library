@@ -12,22 +12,6 @@
 
 -----------------------------------------------------  */
 
-.grid {
-  @include grid-css-float;
-   > div{
-     @include grid-css-float-item(12);
-   }
-  .kk {@include grid-css-float-item(2)}
-  .kkk {@include grid-css-float-item(3)}
- }
-
-.grid-css-flex {
-  @include grid-css-flex;
-  > div {
-    @include grid-css-flex-item(1);
-  }
-}
-
 
 // Blocks add bottom margin
 //

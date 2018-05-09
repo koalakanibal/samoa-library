@@ -1,0 +1,187 @@
+/* @select inputs
+--------------------------------------------------------
+
+  Base styling for all selects
+
+  Example: Dropdown collapsed
+            <div class="dropdown dropdown--collapsed">
+                <span class="input-text__label">Dropdown Collapsed Label</span>
+                <button class="dropdown-button icon-collapsed">Select a name</button>
+                <ul class="dropdown-options">
+                    <li class="dropdown-options__item">Irene</li>
+                    <li class="dropdown-options__item">Tubal</li>
+                    <li class="dropdown-options__item">Michal</li>
+                </ul>
+            </div>
+
+Example: Dropdown expanded
+            <div class="dropdown">
+                <span class="input-text__label">Dropdown Collapsed Label</span>
+                <button class="dropdown-button icon-collapsed">Select a name</button>
+                <ul class="dropdown-options">
+                    <li class="dropdown-options__item">Irene</li>
+                    <li class="dropdown-options__item">Tubal</li>
+                    <li class="dropdown-options__item">Michal</li>
+                </ul>
+            </div>
+
+Example: Dropdown disabled
+            <div class="dropdown dropdown--collapsed dropdown--disabled">
+                <span class="input-text__label">Dropdown Collapsed Label</span>
+                <button class="dropdown-button icon-collapsed">Select a name</button>
+                <ul class="dropdown-options">
+                    <li class="dropdown-options__item">Irene</li>
+                    <li class="dropdown-options__item">Tubal</li>
+                    <li class="dropdown-options__item">Michal</li>
+                </ul>
+            </div>
+
+Example: Dropdown error
+            <div class="dropdown dropdown--collapsed dropdown--error">
+                <span class="input-text__label">Dropdown Collapsed Label</span>
+                <button class="dropdown-button icon-collapsed">Select a name</button>
+                <ul class="dropdown-options">
+                    <li class="dropdown-options__item">Irene</li>
+                    <li class="dropdown-options__item">Tubal</li>
+                    <li class="dropdown-options__item">Michal</li>
+                </ul>
+            </div>
+
+
+------------------------------------------------------ */
+.dropdown {
+  position: relative;
+
+  &--focused {
+    .input-text__label {
+      color: $color-active;
+    }
+  }
+}
+
+.dropdown-button {
+  //@include fa-icon-content($fa-var-angle-up);
+  @include font-size($font-regular);
+  //@include border-radius(3px);
+  @include border-radius(3px 3px 0 0);
+  @include truncate;
+  background: $color__white;
+  border: 1px solid $color-border;
+  color: $color-font-primary;
+  display: inline-block;
+  font-weight: $regular;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  padding: 0 10px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  z-index: 5;
+
+  &__item-selected {
+    color: $color-font-primary;
+    font-weight: $regular;
+  }
+}
+
+select {
+  width: 100%;
+  font-size: 1rem;
+  &.select--sm {
+    font-size: .5rem;
+  }
+  &.select--lg {
+    font-size: 1.5rem;
+  }
+}
+
+
+.dropdown-options {
+  //@include animation(dropdown-expand .3s linear);
+  @include transition(max-height,.3s,ease-in-out,0s);
+  background: $color__white;
+  border: 1px solid $color-border;
+  color: $color-font-primary;
+  display: block;
+  margin-top: -1px;
+  max-height: 11rem;
+  position: absolute;
+  opacity: 1;
+  overflow: hidden;
+  width: 100%;
+  z-index: 6;
+
+  &--overflow {
+    overflow: auto;
+  }
+
+  &__item {
+    @include font-size($font-regular);
+    @include truncate;
+    border-bottom: 1px solid $color__grey--light;
+    display: block;
+    font-weight: $regular;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 10px;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover,
+    &--highlighted {
+      background: $color-primary;
+      color: $color__white;
+      cursor: pointer;
+    }
+  }
+
+}
+
+
+.dropdown--collapsed {
+  .dropdown-button {
+    @include border-radius(3px);
+    //@include background-image(linear-gradient($bg-gradient-color));
+    //@include fa-icon-content($fa-var-angle-down);
+
+    &--focused {
+      border: 1px solid $color-active;
+    }
+  }
+
+  .dropdown-options {
+    @include animation(dropdown-collapse .3s linear forwards);
+    @include transition(max-height 0.3s ease-in-out 0s);
+    max-height: 0;
+  }
+
+  &.dropdown--disabled {
+    .input-text__label {
+      color: $color-font-disabled;
+    }
+    .dropdown-button {
+      //background: $color-btn-disabled;
+      border-color: $color__grey--light;
+      color: $color__grey--light;
+      pointer-events: none;
+
+      /*&::before {
+        color: $primary-button-font-color;
+        background: $medium-color;
+      }*/
+    }
+  }
+
+  &.dropdown--error {
+    .input-text__label {
+      color: $color__error;
+    }
+    .dropdown-button {
+      //background: $color-btn-disabled;
+      border-color: $color__error;
+      color: $color__error;
+    }
+  }
+}

@@ -15,5 +15,17 @@
 ------------------------------------------------------ */
 
 .site-sidebar {
-  @include grid-css-flex-item()
+ /* @extend %grid-item--12;
+
+  @include media(S) {
+    @extend %grid-item--12;
+  }
+
+  @include media(M) {
+    @extend %grid-item--2;
+  }
+
+  @include media(L) {
+    @extend %grid-item--3;
+  }*/
 }

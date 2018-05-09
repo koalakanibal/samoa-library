@@ -1,0 +1,176 @@
+/* @text inputs
+--------------------------------------------------------
+
+  Base styles for inputs
+
+  Example: Text Input
+            <span class="input-text">
+                <span class="input-text__label">Input Text Label</span>
+                <input placeholder="Volume Name" class="input-text__field">
+            </span>
+
+Example: Text Input Focus
+            <span class="input-text input-text--focus">
+                <span class="input-text__label">Input Text Focus Label</span>
+                <input placeholder="Volume Name" class="input-text__field">
+            </span>
+
+Example: Text Input Disabled
+            <span class="input-text input-text--disabled">
+                <span class="input-text__label">Input Text Disabled Label</span>
+                <input placeholder="Volume Name" class="input-text__field">
+            </span>
+
+Example: Text Input error
+            <span class="input-text input-text--error">
+                <span class="input-text__label">Input Text Error Label</span>
+                <input placeholder="Volume Name" class="input-text__field">
+            </span>
+
+------------------------------------------------------ */
+
+/**********************************/
+/******* Basic fallback style *****/
+/**********************************/
+input {
+  &:focus {
+    outline: none;
+  }
+}
+
+// Define the input placeholder color to be reused in the
+// following code
+$input-placeholder: rgba($color__grey, .6);
+
+// Placeholders
+input {
+  &::-webkit-input-placeholder {
+    color: $input-placeholder;
+    @extend %serif--light;
+  }
+  &:-moz-placeholder {
+    color: $input-placeholder;
+    @extend %serif--light;
+  }
+  &::-moz-placeholder {
+    color: $input-placeholder;
+  }
+  &:-ms-input-placeholder {
+    color: $input-placeholder;
+  }
+}
+// Placeholders on focus
+input:focus {
+  &::-webkit-input-placeholder {
+    opacity: .3;
+  }
+  &:-moz-placeholder {
+    opacity: .3;
+  }
+  &::-moz-placeholder {
+    opacity: .3;
+  }
+  &:-ms-input-placeholder {
+    opacity: .3;
+  }
+}
+
+
+/**********************************/
+/******* Custom style *****/
+/**********************************/
+.input-text {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+
+  &__label {
+    @include font-size($font-small);
+    color: $color-font-primary;
+  }
+
+  &--focus {
+    .input-text__label {
+      color: $color-active;
+    }
+
+    .input-text__field {
+      border-color: $color-active;
+    }
+  }
+
+  &__field {
+    @include border-radius(3px);
+    @include font-size($font-regular);
+    -webkit-appearance: none;
+    background-color: $color__white;
+    border: 1px solid $color-border;
+    color: $color-font-primary;
+    font-weight: $regular;
+    display: inline-block;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    padding: 0 .625rem;
+    width: 100%;
+
+    &:focus,
+    &:active {
+      border-color: $color-active;
+      outline: none;
+    }
+  }
+
+  &--disabled {
+    $input-placeholder: $color__grey--light;
+
+    .input-text__label {
+      color: $color__grey--light;
+    }
+
+    .input-text__field {
+      border-color: $color__grey--light;
+      pointer-events: none;
+
+      &::-webkit-input-placeholder {
+        color: $input-placeholder;
+        @extend %serif--light;
+      }
+      &:-moz-placeholder {
+        color: $input-placeholder;
+        @extend %serif--light;
+      }
+      &::-moz-placeholder {
+        color: $input-placeholder;
+      }
+      &:-ms-input-placeholder {
+        color: $input-placeholder;
+      }
+    }
+  }
+
+  &--error {
+    .input-text__label {
+      color: $color__error;
+    }
+
+    .input-text__field {
+      border-color: $color__error;
+      //color: $color__error;
+
+      &::-webkit-input-placeholder {
+        //color: $color__error;
+        @extend %serif--light;
+      }
+      &:-moz-placeholder {
+        //color: $color__error;
+        @extend %serif--light;
+      }
+      &::-moz-placeholder {
+        //color: $color__error;
+      }
+      &:-ms-input-placeholder {
+        //color: $color__error;
+      }
+    }
+  }
+}

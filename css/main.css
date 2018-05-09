@@ -2743,58 +2743,84 @@ readers do not read off random characters that represent icons */
   the value of 1 $unit.
 
 --------------------------------------------------------- */
-/**
- * Convert font-size from px to rem with px fallback
- *
- * @param $size - the value in pixel you want to convert
- *
- * e.g. p {@include fontSize(12px);}
- *
- */
-.align-left {
-  text-align: left; }
+/* Mixin font-size
+--------------------------------------------------------
 
-.align-center {
-  text-align: center; }
+  REM calculation with px fallback
+  Example: @include font-size(15px);
 
-.align-right {
-  text-align: right; }
+------------------------------------------------------ */
+/* Mixin text ellipsis
+--------------------------------------------------------
 
-.float-left {
-  float: left; }
+  Example: @include truncate;
+           @include dont-truncate;
 
-.float-right {
-  float: right; }
+------------------------------------------------------ */
+/* Mixin text alignment
+--------------------------------------------------------
 
-.scroll-visible {
-  overflow: visible; }
+  Example: @include text-align(right);
 
-.scroll-auto {
-  overflow: auto; }
+------------------------------------------------------ */
+/* Mixin borders
+--------------------------------------------------------
+  Can be equal or different
+  Example: @include border-radius(3px);
+           @include border-radius(1px 0 20px 3px);
 
-.scroll-hidden {
-  overflow: hidden; }
+------------------------------------------------------ */
+/* Mixin hidden
+--------------------------------------------------------
+  Remove elements but still in the DOM
+  Example: @include hidden;
 
-/*
+------------------------------------------------------ */
+/* Mixin not-displayed
+--------------------------------------------------------
+  Remove elements
+  Example: @include hidden;
 
-Animation mixin
-    Example usage:
+------------------------------------------------------ */
+/* Mixin Animation
+--------------------------------------------------------
+  1- KEYFRAME
+    Example:
+        @include keyframe(fadeout) {
+          0% {
+              opacity: 1;
+          }
 
- */
-/*
+          100% {
+              opacity: 0;
+          }
+      }
 
-Transition mixin
+  2- ANIMATION
+    Example
+    @include animation(fadeOut 10s linear forward)
+
+------------------------------------------------------ */
+/* Mixin Transition
+--------------------------------------------------------
+ Transition mixin
     Example usage:
      @include transition(color .3s ease);
 
- */
-/*
-
-Transform mixin
+------------------------------------------------------ */
+/* Mixin Transition
+--------------------------------------------------------
+1- Generic transform
+  2- Rotate
     Example usage:
      @include rotate(45);
 
- */
+  3- Scale
+  4- Translate
+  5- Skew
+  6- Transform-origin
+
+------------------------------------------------------ */
 /**
 
   @clearfix mixin
@@ -2982,12 +3008,12 @@ video {
 
 ------------------------------------------------------ */
 body {
-  font-family: arial;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-style: normal; }
 
 .btn {
-  font-family: arial;
+  font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-style: normal; }
 
@@ -3002,10 +3028,209 @@ body {
   }
 
 -------------------------------------------------------- */
-.input-text--disabled .input-text__field::-webkit-input-placeholder, .input-text--disabled .input-text__field:-moz-placeholder, .input-text--error .input-text__field::-webkit-input-placeholder, .input-text--error .input-text__field:-moz-placeholder, input::-webkit-input-placeholder, input:-moz-placeholder, textarea {
+input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled .input-text__field::-webkit-input-placeholder, .input-text--disabled .input-text__field:-moz-placeholder, .input-text--error .input-text__field::-webkit-input-placeholder, .input-text--error .input-text__field:-moz-placeholder, textarea {
   font-family: georgia, times;
   font-weight: 300;
   font-style: normal; }
+
+/* Text align class
+--------------------------------------------------------
+
+  Example: .align-left;
+
+------------------------------------------------------ */
+.align-left {
+  text-align: left; }
+
+.align-center {
+  text-align: center; }
+
+.align-right {
+  text-align: right; }
+
+/* Float class
+--------------------------------------------------------
+
+  Example: .float-left;
+
+------------------------------------------------------ */
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
+/* Scroll class
+--------------------------------------------------------
+
+  Example: .float-left;
+
+------------------------------------------------------ */
+.scroll-visible {
+  overflow: visible; }
+
+.scroll-auto {
+  overflow: auto; }
+
+.scroll-hidden {
+  overflow: hidden; }
+
+/* Spacing margins
+--------------------------------------------------------
+
+  Example: .mt-3, pb-2
+  We have -0 value to remove margin/padding
+
+------------------------------------------------------ */
+.mt-0 {
+  margin-top: 0px; }
+
+.mt-1 {
+  margin-top: 16px; }
+
+.mt-2 {
+  margin-top: 32px; }
+
+.mt-3 {
+  margin-top: 48px; }
+
+.mt-4 {
+  margin-top: 64px; }
+
+.mb-0 {
+  margin-bottom: 0px; }
+
+.mb-1 {
+  margin-bottom: 16px; }
+
+.mb-2 {
+  margin-bottom: 32px; }
+
+.mb-3 {
+  margin-bottom: 48px; }
+
+.mb-4 {
+  margin-bottom: 64px; }
+
+.mr-0 {
+  margin-right: 0px; }
+
+.mr-1 {
+  margin-right: 16px; }
+
+.mr-2 {
+  margin-right: 32px; }
+
+.mr-3 {
+  margin-right: 48px; }
+
+.mr-4 {
+  margin-right: 64px; }
+
+.ml-0 {
+  margin-left: 0px; }
+
+.ml-1 {
+  margin-left: 16px; }
+
+.ml-2 {
+  margin-left: 32px; }
+
+.ml-3 {
+  margin-left: 48px; }
+
+.ml-4 {
+  margin-left: 64px; }
+
+.mall-0 {
+  margin: 0px; }
+
+.mall-1 {
+  margin: 16px; }
+
+.mall-2 {
+  margin: 32px; }
+
+.mall-3 {
+  margin: 48px; }
+
+.mall-4 {
+  margin: 64px; }
+
+.pt-0 {
+  padding-top: 0px; }
+
+.pt-1 {
+  padding-top: 16px; }
+
+.pt-2 {
+  padding-top: 32px; }
+
+.pt-3 {
+  padding-top: 48px; }
+
+.pt-4 {
+  padding-top: 64px; }
+
+.pb-0 {
+  padding-bottom: 0px; }
+
+.pb-1 {
+  padding-bottom: 16px; }
+
+.pb-2 {
+  padding-bottom: 32px; }
+
+.pb-3 {
+  padding-bottom: 48px; }
+
+.pb-4 {
+  padding-bottom: 64px; }
+
+.pr-0 {
+  padding-right: 0px; }
+
+.pr-1 {
+  padding-right: 16px; }
+
+.pr-2 {
+  padding-right: 32px; }
+
+.pr-3 {
+  padding-right: 48px; }
+
+.pr-4 {
+  padding-right: 64px; }
+
+.pl-0 {
+  padding-left: 0px; }
+
+.pl-1 {
+  padding-left: 16px; }
+
+.pl-2 {
+  padding-left: 32px; }
+
+.pl-3 {
+  padding-left: 48px; }
+
+.pl-4 {
+  padding-left: 64px; }
+
+.pall-0 {
+  padding: 0px; }
+
+.pall-1 {
+  padding: 16px; }
+
+.pall-2 {
+  padding: 32px; }
+
+.pall-3 {
+  padding: 48px; }
+
+.pall-4 {
+  padding: 64px; }
 
 /**
 
@@ -3336,435 +3561,6 @@ code {
 
 
 --------------------------------------------------------- */
-/* @text inputs
---------------------------------------------------------
-
-  Base styles for inputs
-
-  Example: Text Input
-            <span class="input-text">
-                <span class="input-text__label">Label</span>
-                <input placeholder="Placeholder" class="input-text__field">
-            </span>
-
-  Inputs can use status classes: disabled, error
-
-  Example: Disabled input
-            <span class="input-text input-text--disabled">
-                <span class="input-text__label">Label</span>
-                <input placeholder="Volume Name" class="input-text__field">
-            </span>
-
-Example: Error input
-            <span class="input-text input-text--error">
-                <span class="input-text__label">Label</span>
-                <input placeholder="Volume Name" class="input-text__field">
-            </span>
-
-  Inputs can use sizing classes, .input--s .input--l
-
-  Example: Text Small Input
-  <input class="input--s" type="text" name="schramburger" placeholder="Your Name">
-
-  Example: Text Input
-  <input class="input--l" type="text" name="schramburger" placeholder="Your Name">
-
------------------------------------------------------- */
-.input-text {
-  display: inline-block;
-  width: 100%;
-  position: relative;
-  /*&--focus {
-    .input-text__label {
-      color: $color__blue;
-    }
-
-    .input-text__field {
-      border-color: $color__blue;
-    }
-  }*/ }
-  .input-text__label {
-    font-size: 12px;
-    font-size: 0.75rem;
-    color: #0779B4; }
-  .input-text__field {
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    font-size: 14px;
-    font-size: 0.875rem;
-    -webkit-appearance: none;
-    border: 1px solid #636363;
-    color: #636363;
-    font-weight: 400;
-    display: inline-block;
-    height: 2.25rem;
-    line-height: 2.25rem;
-    padding: 0 .625rem;
-    width: 100%; }
-    .input-text__field:focus, .input-text__field:active {
-      border-color: #0779B4;
-      outline: none; }
-  .input-text--disabled .input-text__label {
-    color: #DDD; }
-  .input-text--disabled .input-text__field {
-    border-color: #DDD;
-    pointer-events: none; }
-    .input-text--disabled .input-text__field::-webkit-input-placeholder {
-      color: #DDD; }
-    .input-text--disabled .input-text__field:-moz-placeholder {
-      color: #DDD; }
-    .input-text--disabled .input-text__field::-moz-placeholder {
-      color: #DDD; }
-    .input-text--disabled .input-text__field:-ms-input-placeholder {
-      color: #DDD; }
-  .input-text--error .input-text__field {
-    border-color: #B82346; }
-    .input-text--error .input-text__field::-webkit-input-placeholder {
-      color: #B82346; }
-    .input-text--error .input-text__field:-moz-placeholder {
-      color: #B82346; }
-    .input-text--error .input-text__field::-moz-placeholder {
-      color: #B82346; }
-    .input-text--error .input-text__field:-ms-input-placeholder {
-      color: #B82346; }
-
-input:focus {
-  outline: none; }
-
-input.input--s {
-  font-size: .5rem; }
-
-input.input--l {
-  font-size: 1.5rem; }
-
-input::-webkit-input-placeholder {
-  color: rgba(99, 99, 99, 0.6); }
-
-input:-moz-placeholder {
-  color: rgba(99, 99, 99, 0.6); }
-
-input::-moz-placeholder {
-  color: rgba(99, 99, 99, 0.6); }
-
-input:-ms-input-placeholder {
-  color: rgba(99, 99, 99, 0.6); }
-
-input:focus::-webkit-input-placeholder {
-  opacity: .3; }
-
-input:focus:-moz-placeholder {
-  opacity: .3; }
-
-input:focus::-moz-placeholder {
-  opacity: .3; }
-
-input:focus:-ms-input-placeholder {
-  opacity: .3; }
-
-/* @select inputs
---------------------------------------------------------
-
-  Base styling for all selects
-
-  Example: Select Input
-  <select name="schramburger">
-    <option value="value-1">Option 1</option>
-    <option value="value-2">Option 2</option>
-    <option value="value-3">Option 3</option>
-    <option value="value-4">Option 4</option>
-  </select>
-
-  Selects can have added sizing classes, .select--s and .select--l
-
-  Example: Small select
-  <select name="schramburger" class="select--s">
-    <option value="value-1">Option 1</option>
-    <option value="value-2">Option 2</option>
-    <option value="value-3">Option 3</option>
-    <option value="value-4">Option 4</option>
-  </select>
-
-  Example: Large select
-  <select name="schramburger" class="select--l">
-    <option value="value-1">Option 1</option>
-    <option value="value-2">Option 2</option>
-    <option value="value-3">Option 3</option>
-    <option value="value-4">Option 4</option>
-  </select>
-
------------------------------------------------------- */
-.dropdown {
-  position: relative; }
-
-.dropdown-button {
-  font-size: 14px;
-  font-size: 0.875rem;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-  -webkit-border-top-left-radius: 3px;
-  -webkit-border-top-right-radius: 3px;
-  -webkit-border-bottom-right-radius: 0;
-  -webkit-border-bottom-left-radius: 0;
-  -moz-border-radius-topleft: 3px;
-  -moz-border-radius-topright: 3px;
-  -moz-border-radius-bottomright: 0;
-  -moz-border-radius-bottomleft: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  border: 1px solid #636363;
-  color: #636363;
-  display: inline-block;
-  font-weight: 400;
-  height: 2.25rem;
-  line-height: 2.25rem;
-  padding: 0 10px;
-  position: relative;
-  text-align: left;
-  width: 100%;
-  z-index: 5; }
-  .dropdown-button__item-selected {
-    color: #636363;
-    font-weight: 700; }
-
-select {
-  width: 100%;
-  font-size: 1rem; }
-  select.select--sm {
-    font-size: .5rem; }
-  select.select--lg {
-    font-size: 1.5rem; }
-
-.dropdown-options {
-  background: #fff;
-  border: 1px solid #636363;
-  color: #636363;
-  display: block;
-  max-height: 11rem;
-  margin-top: -1px;
-  position: absolute;
-  opacity: 1;
-  overflow: hidden;
-  width: 100%;
-  z-index: 6; }
-  .dropdown-options--overflow {
-    overflow: auto; }
-  .dropdown-options__item {
-    font-size: 14px;
-    font-size: 0.875rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border-bottom: 1px solid #DDD;
-    display: block;
-    height: 2rem;
-    line-height: 2rem;
-    font-weight: 400;
-    padding: 0 10px; }
-    .dropdown-options__item:last-child {
-      border-bottom: 0; }
-    .dropdown-options__item:hover, .dropdown-options__item--highlighted {
-      background: #0779B4;
-      color: #fff;
-      cursor: pointer; }
-
-.dropdown--collapsed .dropdown-button {
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px; }
-  .dropdown--collapsed .dropdown-button--focused {
-    border: 1px solid #0779B4; }
-
-.dropdown--collapsed .dropdown-options {
-  -webkit-animation: dropdown-collapse 0.3s linear forwards;
-  -moz-animation: dropdown-collapse 0.3s linear forwards;
-  -o-animation: dropdown-collapse 0.3s linear forwards;
-  animation: dropdown-collapse 0.3s linear forwards;
-  transition: max-height 0.3s ease-in-out 0s;
-  max-height: 0; }
-
-.dropdown--collapsed.dropdown--disabled .input-text__label {
-  color: #DDD; }
-
-.dropdown--collapsed.dropdown--disabled .dropdown-button {
-  border-color: #DDD;
-  color: #DDD;
-  pointer-events: none;
-  /*&::before {
-        color: $primary-button-font-color;
-        background: $medium-color;
-      }*/ }
-
-.dropdown--collapsed.dropdown--error .input-text__label {
-  color: #B82346; }
-
-.dropdown--collapsed.dropdown--error .dropdown-button {
-  border-color: #B82346;
-  color: #B82346; }
-
-/* @textareas
---------------------------------------------------------
-
-  Base styling for textareas
-
-  Textareas can have .textarea--s or .textarea--l classes
-  for different sizes
-
-  Example: Textarea
-  <textarea name="schramburger">Hello, there.</textarea>
-
-  Example: Small Textarea
-  <textarea class="textarea--s" name="schramburger">Hello, there.</textarea>
-
-  Example: Large Textarea
-  <textarea class="textarea--l" name="schramburger">Hello, there.</textarea>
-
------------------------------------------------------- */
-textarea {
-  width: 100%;
-  min-height: 6em;
-  padding: 1em;
-  border: solid 1px #000; }
-  textarea:focus {
-    outline: none; }
-  textarea.textarea--s {
-    font-size: .5rem; }
-  textarea.textarea--l {
-    font-size: 1.5rem; }
-
-.text-area {
-  font-size: 14px;
-  font-size: 0.875rem;
-  border: 1px solid #636363;
-  color: #636363;
-  display: inline-block;
-  font-weight: 400;
-  line-height: 1.2rem;
-  padding: 6px;
-  width: 100%; }
-  .text-area:focus, .text-area:active {
-    border-color: #0779B4; }
-  .text-area.resize-none {
-    resize: none; }
-  .text-area.resize-vertical {
-    resize: vertical; }
-  .text-area.resize-horizontal {
-    resize: horizontal; }
-  .text-area--error {
-    border-color: #B82346; }
-
-/* @radio inputs
---------------------------------------------------------
-
-  Base styling for radio inputs.  Radios are surrounded
-  by a label for better click targets.
-
-  Example: Radio
-  <label class="label--radio" for="radio-1"><input id="radio-1" type="radio" value="yes"> Radio label</label>
-
-  Example: Radio with super-long label
-  <label class="label--radio" for="radio-3"><input id="radio-3" type="radio" value="yes"> Radio label Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione, accusantium ipsum animi perspiciatis officiis iure voluptatibus corporis. Enim, officia, tempora vitae libero dolore sint voluptatum. Blanditiis odit laudantium minus repellat</label>
-
-
------------------------------------------------------- */
-input[type=radio] {
-  -webkit-appearance: none;
-  width: 1em;
-  height: 1em;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid #444;
-  background: transparent; }
-  input[type=radio]:checked {
-    background: #222; }
-
-.label--radio {
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  padding-left: 1em; }
-  .label--radio input {
-    position: absolute;
-    top: .7em;
-    left: 0; }
-
-.radio {
-  font-size: 14px;
-  font-size: 0.875rem;
-  display: inline-block;
-  line-height: 1.5rem;
-  position: relative;
-  width: 100%; }
-  .radio:last-child {
-    margin-bottom: 0; }
-  .radio__input {
-    cursor: pointer;
-    height: 1.2rem;
-    left: 0;
-    position: absolute;
-    top: .2rem;
-    width: 1.2rem;
-    z-index: 0;
-    opacity: 0; }
-  .radio__label {
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 300;
-    padding: 0 0 0 1.6rem; }
-    .radio__label::before {
-      -webkit-transition: all 0.2s linear 0s;
-      -moz-transition: all 0.2s linear 0s;
-      -ms-transition: all 0.2s linear 0s;
-      -o-transition: all 0.2s linear 0s;
-      transition: all 0.2s linear 0s;
-      border-radius: 50%;
-      -webkit-border-radius: 50%;
-      -moz-border-radius: 50%;
-      background-color: #fff;
-      border: 1px solid #636363;
-      content: '';
-      height: 1.375rem;
-      top: 0;
-      left: 0;
-      position: absolute;
-      width: 1.375rem;
-      z-index: 1; }
-    .radio__label > span {
-      display: inline-block; }
-  .radio__input:checked + .radio__label {
-    font-weight: 700; }
-    .radio__input:checked + .radio__label::before {
-      background-color: #fff;
-      border: 5px solid #0779B4;
-      box-shadow: none; }
-    .radio__input:checked + .radio__label::after {
-      border-color: #fff; }
-  .radio--disabled .radio__label {
-    color: #DDD;
-    pointer-events: none; }
-    .radio--disabled .radio__label::before {
-      background-color: #DDD;
-      border-color: #DDD; }
-  .radio--mini .radio__label {
-    font-size: 12px;
-    font-size: 0.75rem;
-    padding-left: 1.6rem; }
-    .radio--mini .radio__label:before {
-      height: 1.125rem;
-      width: 1.125rem;
-      top: 3px; }
-
-@-moz-document url-prefix() {
-  .radio__label::after {
-    height: .69rem;
-    left: 0.334rem;
-    position: absolute;
-    top: 0.367rem;
-    width: .69rem; } }
-
 /* @checkbox inputs
 --------------------------------------------------------
 
@@ -3779,9 +3575,35 @@ input[type=radio] {
 
 
 ------------------------------------------------------ */
+/**********************************/
+/******* Basic fallback style *****/
+/**********************************/
+input[type=checkbox] {
+  -webkit-appearance: none;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  border: 1px solid #636363;
+  background: transparent; }
+  input[type=checkbox]:checked {
+    background: #0779B4; }
+
+.label--checkbox {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1em; }
+  .label--checkbox input {
+    position: absolute;
+    top: .7em;
+    left: 0; }
+
+/**********************************/
+/******* Checkbox custom style *****/
+/**********************************/
 .checkbox {
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 12px;
+  font-size: 0.75rem;
   display: inline-block;
   line-height: 1.5rem;
   position: relative;
@@ -3791,11 +3613,13 @@ input[type=radio] {
     height: 1.2rem;
     left: 0;
     position: absolute;
+    opacity: 0;
     top: .2rem;
     width: 1.2rem;
-    z-index: 0;
-    opacity: 0; }
+    z-index: 0; }
   .checkbox__label {
+    font-size: 14px;
+    font-size: 0.875rem;
     cursor: pointer;
     display: inline-block;
     font-weight: 300;
@@ -3841,7 +3665,7 @@ input[type=radio] {
     .checkbox__label > span {
       display: inline-block; }
   .checkbox__input:checked + .checkbox__label {
-    font-weight: 700; }
+    font-weight: 400; }
     .checkbox__input:checked + .checkbox__label::before {
       background-color: #0779B4;
       border-color: #0779B4; }
@@ -3862,17 +3686,443 @@ input[type=radio] {
     .checkbox--disabled .checkbox__input:checked + .checkbox__label::after {
       border-color: #DDD; }
 
+/* @radio inputs
+--------------------------------------------------------
+
+  Base styling for radio inputs.  Radios are surrounded
+  by a label for better click targets.
+
+  <span class="radio">
+    <input type="radio" id="radio0" name="frequency-checkbox" value="0" class="radio__input">
+    <label for="radio0" class="radio__label">Radio Label</label>
+  </span>
+
+------------------------------------------------------ */
+/**********************************/
+/******* Basic fallback style *****/
+/**********************************/
+input[type=radio] {
+  -webkit-appearance: none;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #444;
+  background: transparent; }
+  input[type=radio]:checked {
+    background: #222; }
+
+.label--radio {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  padding-left: 1em; }
+  .label--radio input {
+    position: absolute;
+    top: .7em;
+    left: 0; }
+
+/**********************************/
+/******* Custom style *****/
+/**********************************/
+.radio {
+  font-size: 12px;
+  font-size: 0.75rem;
+  display: inline-block;
+  line-height: 1.5rem;
+  position: relative;
+  width: 100%; }
+  .radio:last-child {
+    margin-bottom: 0; }
+  .radio__input {
+    cursor: pointer;
+    height: 1.2rem;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: .2rem;
+    width: 1.2rem;
+    z-index: 0; }
+  .radio__label {
+    font-size: 14px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 300;
+    padding: 0 0 0 1.6rem; }
+    .radio__label::before {
+      -webkit-transition: all 0.2s linear 0s;
+      -moz-transition: all 0.2s linear 0s;
+      -ms-transition: all 0.2s linear 0s;
+      -o-transition: all 0.2s linear 0s;
+      transition: all 0.2s linear 0s;
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      background-color: #fff;
+      border: 1px solid #636363;
+      content: '';
+      height: 1.25rem;
+      top: 0;
+      left: 0;
+      position: absolute;
+      width: 1.25rem;
+      z-index: 1; }
+    .radio__label > span {
+      display: inline-block; }
+  .radio__input:checked + .radio__label {
+    font-weight: 400; }
+    .radio__input:checked + .radio__label::before {
+      background-color: #fff;
+      border: 5px solid #0779B4;
+      box-shadow: none; }
+    .radio__input:checked + .radio__label::after {
+      border-color: #fff; }
+  .radio--disabled .radio__label {
+    color: #DDD;
+    pointer-events: none; }
+    .radio--disabled .radio__label::before {
+      background-color: #DDD;
+      border-color: #DDD; }
+  .radio--mini .radio__label {
+    font-size: 12px;
+    font-size: 0.75rem;
+    padding-left: 1.6rem; }
+    .radio--mini .radio__label:before {
+      height: 1.125rem;
+      width: 1.125rem;
+      top: 3px; }
+
+@-moz-document url-prefix() {
+  .radio__label::after {
+    height: .69rem;
+    left: 0.334rem;
+    position: absolute;
+    top: 0.367rem;
+    width: .69rem; } }
+
+/* @text inputs
+--------------------------------------------------------
+
+  Base styles for inputs
+
+  Example: Text Input
+            <span class="input-text">
+                <span class="input-text__label">Input Text Label</span>
+                <input placeholder="Volume Name" class="input-text__field">
+            </span>
+
+Example: Text Input Focus
+            <span class="input-text input-text--focus">
+                <span class="input-text__label">Input Text Focus Label</span>
+                <input placeholder="Volume Name" class="input-text__field">
+            </span>
+
+Example: Text Input Disabled
+            <span class="input-text input-text--disabled">
+                <span class="input-text__label">Input Text Disabled Label</span>
+                <input placeholder="Volume Name" class="input-text__field">
+            </span>
+
+Example: Text Input error
+            <span class="input-text input-text--error">
+                <span class="input-text__label">Input Text Error Label</span>
+                <input placeholder="Volume Name" class="input-text__field">
+            </span>
+
+------------------------------------------------------ */
+/**********************************/
+/******* Basic fallback style *****/
+/**********************************/
+input:focus {
+  outline: none; }
+
+input::-webkit-input-placeholder {
+  color: rgba(99, 99, 99, 0.6); }
+
+input:-moz-placeholder {
+  color: rgba(99, 99, 99, 0.6); }
+
+input::-moz-placeholder {
+  color: rgba(99, 99, 99, 0.6); }
+
+input:-ms-input-placeholder {
+  color: rgba(99, 99, 99, 0.6); }
+
+input:focus::-webkit-input-placeholder {
+  opacity: .3; }
+
+input:focus:-moz-placeholder {
+  opacity: .3; }
+
+input:focus::-moz-placeholder {
+  opacity: .3; }
+
+input:focus:-ms-input-placeholder {
+  opacity: .3; }
+
+/**********************************/
+/******* Custom style *****/
+/**********************************/
+.input-text {
+  display: inline-block;
+  width: 100%;
+  position: relative; }
+  .input-text__label {
+    font-size: 12px;
+    font-size: 0.75rem;
+    color: #636363; }
+  .input-text--focus .input-text__label {
+    color: #0779B4; }
+  .input-text--focus .input-text__field {
+    border-color: #0779B4; }
+  .input-text__field {
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    font-size: 14px;
+    font-size: 0.875rem;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 1px solid #636363;
+    color: #636363;
+    font-weight: 400;
+    display: inline-block;
+    height: 2.25rem;
+    line-height: 2.25rem;
+    padding: 0 .625rem;
+    width: 100%; }
+    .input-text__field:focus, .input-text__field:active {
+      border-color: #0779B4;
+      outline: none; }
+  .input-text--disabled .input-text__label {
+    color: #DDD; }
+  .input-text--disabled .input-text__field {
+    border-color: #DDD;
+    pointer-events: none; }
+    .input-text--disabled .input-text__field::-webkit-input-placeholder {
+      color: #DDD; }
+    .input-text--disabled .input-text__field:-moz-placeholder {
+      color: #DDD; }
+    .input-text--disabled .input-text__field::-moz-placeholder {
+      color: #DDD; }
+    .input-text--disabled .input-text__field:-ms-input-placeholder {
+      color: #DDD; }
+  .input-text--error .input-text__label {
+    color: #B82346; }
+  .input-text--error .input-text__field {
+    border-color: #B82346; }
+
+/* @select inputs
+--------------------------------------------------------
+
+  Base styling for all selects
+
+  Example: Dropdown collapsed
+            <div class="dropdown dropdown--collapsed">
+                <span class="input-text__label">Dropdown Collapsed Label</span>
+                <button class="dropdown-button icon-collapsed">Select a name</button>
+                <ul class="dropdown-options">
+                    <li class="dropdown-options__item">Irene</li>
+                    <li class="dropdown-options__item">Tubal</li>
+                    <li class="dropdown-options__item">Michal</li>
+                </ul>
+            </div>
+
+Example: Dropdown expanded
+            <div class="dropdown">
+                <span class="input-text__label">Dropdown Collapsed Label</span>
+                <button class="dropdown-button icon-collapsed">Select a name</button>
+                <ul class="dropdown-options">
+                    <li class="dropdown-options__item">Irene</li>
+                    <li class="dropdown-options__item">Tubal</li>
+                    <li class="dropdown-options__item">Michal</li>
+                </ul>
+            </div>
+
+Example: Dropdown disabled
+            <div class="dropdown dropdown--collapsed dropdown--disabled">
+                <span class="input-text__label">Dropdown Collapsed Label</span>
+                <button class="dropdown-button icon-collapsed">Select a name</button>
+                <ul class="dropdown-options">
+                    <li class="dropdown-options__item">Irene</li>
+                    <li class="dropdown-options__item">Tubal</li>
+                    <li class="dropdown-options__item">Michal</li>
+                </ul>
+            </div>
+
+Example: Dropdown error
+            <div class="dropdown dropdown--collapsed dropdown--error">
+                <span class="input-text__label">Dropdown Collapsed Label</span>
+                <button class="dropdown-button icon-collapsed">Select a name</button>
+                <ul class="dropdown-options">
+                    <li class="dropdown-options__item">Irene</li>
+                    <li class="dropdown-options__item">Tubal</li>
+                    <li class="dropdown-options__item">Michal</li>
+                </ul>
+            </div>
+
+
+------------------------------------------------------ */
+.dropdown {
+  position: relative; }
+
+.dropdown-button {
+  font-size: 14px;
+  font-size: 0.875rem;
+  border-radius: 3px 3px 0 0;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background: #fff;
+  border: 1px solid #636363;
+  color: #636363;
+  display: inline-block;
+  font-weight: 400;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  padding: 0 10px;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  z-index: 5; }
+  .dropdown-button__item-selected {
+    color: #636363;
+    font-weight: 700; }
+
+select {
+  width: 100%;
+  font-size: 1rem; }
+  select.select--sm {
+    font-size: .5rem; }
+  select.select--lg {
+    font-size: 1.5rem; }
+
+.dropdown-options {
+  -webkit-transition: max-height, 0.3s, ease-in-out, 0s;
+  -moz-transition: max-height, 0.3s, ease-in-out, 0s;
+  -ms-transition: max-height, 0.3s, ease-in-out, 0s;
+  -o-transition: max-height, 0.3s, ease-in-out, 0s;
+  transition: max-height, 0.3s, ease-in-out, 0s;
+  background: #fff;
+  border: 1px solid #636363;
+  color: #636363;
+  display: block;
+  margin-top: -1px;
+  max-height: 11rem;
+  position: absolute;
+  opacity: 1;
+  overflow: hidden;
+  width: 100%;
+  z-index: 6; }
+  .dropdown-options--overflow {
+    overflow: auto; }
+  .dropdown-options__item {
+    font-size: 14px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-bottom: 1px solid #DDD;
+    display: block;
+    font-weight: 400;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0 10px; }
+    .dropdown-options__item:last-child {
+      border-bottom: 0; }
+    .dropdown-options__item:hover, .dropdown-options__item--highlighted {
+      background: #0779B4;
+      color: #fff;
+      cursor: pointer; }
+
+.dropdown--collapsed .dropdown-button {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px; }
+  .dropdown--collapsed .dropdown-button--focused {
+    border: 1px solid #0779B4; }
+
+.dropdown--collapsed .dropdown-options {
+  -webkit-animation: dropdown-collapse 0.3s linear forwards;
+  -moz-animation: dropdown-collapse 0.3s linear forwards;
+  -o-animation: dropdown-collapse 0.3s linear forwards;
+  animation: dropdown-collapse 0.3s linear forwards;
+  -webkit-transition: max-height 0.3s ease-in-out 0s;
+  -moz-transition: max-height 0.3s ease-in-out 0s;
+  -ms-transition: max-height 0.3s ease-in-out 0s;
+  -o-transition: max-height 0.3s ease-in-out 0s;
+  transition: max-height 0.3s ease-in-out 0s;
+  max-height: 0; }
+
+.dropdown--collapsed.dropdown--disabled .input-text__label {
+  color: #DDD; }
+
+.dropdown--collapsed.dropdown--disabled .dropdown-button {
+  border-color: #DDD;
+  color: #DDD;
+  pointer-events: none;
+  /*&::before {
+        color: $primary-button-font-color;
+        background: $medium-color;
+      }*/ }
+
+.dropdown--collapsed.dropdown--error .input-text__label {
+  color: #B82346; }
+
+.dropdown--collapsed.dropdown--error .dropdown-button {
+  border-color: #B82346;
+  color: #B82346; }
+
 /* @textareas
 --------------------------------------------------------
 
   Base styling for textareas
 
+  Textareas can have --resize classes
+  for different sizes
+
   Example: Textarea
-  <textarea name="schramburger">Hello, there.</textarea>
+  <textarea class="text-area" placeholder="Text area placeholder" rows="4"></textarea>
+
 
 ------------------------------------------------------ */
+/**********************************/
+/******* Basic fallback style *****/
+/**********************************/
 textarea {
+  width: 100%;
+  min-height: 6em;
+  padding: 1em;
+  border: solid 1px #636363; }
+  textarea:focus {
+    outline: none; }
+
+/**********************************/
+/******* Custom style *****/
+/**********************************/
+.text-area {
+  font-size: 14px;
+  font-size: 0.875rem;
+  border: 1px solid #636363;
+  color: #636363;
+  display: inline-block;
+  font-weight: 400;
+  line-height: 1.2rem;
+  padding: 6px;
   width: 100%; }
+  .text-area:focus, .text-area:active {
+    border-color: #0779B4; }
+  .text-area.resize-none {
+    resize: none; }
+  .text-area.resize-vertical {
+    resize: vertical; }
+  .text-area.resize-horizontal {
+    resize: horizontal; }
+  .text-area--error {
+    border-color: #B82346; }
 
 /* @labels
 --------------------------------------------------------
@@ -3884,8 +4134,9 @@ textarea {
 
 ------------------------------------------------------ */
 label {
-  font-size: 1em;
-  font-weight: bold; }
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400; }
 
 /* @form
 --------------------------------------------------------
@@ -3904,162 +4155,6 @@ label {
   border: 1px solid #888;
   background: #eee; }
 
-/* @form-header
---------------------------------------------------------
-
-  A form header usually consists of a title and some
-  copy.
-
-  Example: Form header
-  <header class="form__header">
-    <h2>Contact Us</h2>
-    <p>Use this form to contact us.  We love talking to
-    our customers.</p>
-  </header>
-
--------------------------------------------------------- */
-.form__header {
-  padding-bottom: 1em;
-  margin-bottom: 2em;
-  border-bottom: 1px solid #888; }
-
-/* @fieldsets
---------------------------------------------------------
-
-  Fieldsets group together related fields.
-
-  Example: Fieldset
-  <fieldset>
-    <legend>Personal Information</legend>
-    <article class="field">
-      <label class="field__label" for="exampleInput1">Your Name</label>
-      <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
-      <span class="field__feedback"></span>
-      <span class="field__hint"></span>
-    </article>
-    <article class="field">
-      <label class="field__label" for="exampleInput2">Your Email</label>
-      <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
-      <span class="field__feedback"></span>
-      <span class="field__hint">Must be a valid email address</span>
-    </article>
-  </fieldset>
-
-  Fieldsets are also nested inside other fieldsets.
-
-  Example: Nested Fieldsets
-  <fieldset>
-    <legend>Personal Information</legend>
-    <article class="field">
-      <label class="field__label" for="exampleInput31">Your Name</label>
-      <input class="field__input="exampleInput31" type="text" required="required" placeholder="Your name">
-      <span class="field__feedback"></span>
-      <span class="field__hint"></span>
-    </article>
-    <article class="field">
-      <label class="field__label" for="exampleInput32">Your Email</label>
-      <input class="field__input="exampleInput32" type="email" required="required" placeholder="Your email">
-      <span class="field__feedback"></span>
-      <span class="field__hint">Must be a valid email address</span>
-    </article>
-    <fieldset>
-      <legend>Address</legend>
-        <article class="field">
-          <label class="field__label" for="exampleInput33">Address 1</label>
-          <input class="field__input="exampleInput33" type="text" required="required" placeholder="Address 1">
-          <span class="field__feedback"></span>
-          <span class="field__hint">Must be a valid email address</span>
-        </article>
-        <article class="field">
-          <label class="field__label" for="exampleInput34">Address 2</label>
-          <input class="field__input="exampleInput34" type="text" required="required" placeholder="Address 2">
-          <span class="field__feedback"></span>
-          <span class="field__hint">Must be a valid email address</span>
-        </article>
-    </fieldset>
-  </fieldset>
-
--------------------------------------------------------- */
-fieldset {
-  border: none; }
-
-/* @fields
---------------------------------------------------------
-
-  A field is an article that contains the input and anything
-  related to the input.
-
-  Example: Field for a text input
-  <article class="field">
-    <label class="field__label" for="exampleInput1">Your Name</label>
-    <input class="field__input="exampleInput1" type="text" required="required" placeholder="Your name">
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field with hint
-  <article class="field">
-    <label class="field__label" for="exampleInput2">Your Email</label>
-    <input class="field__input="exampleInput2" type="email" required="required" placeholder="Your email">
-    <span class="field__feedback"></span>
-    <span class="field__hint">Must be a valid email address</span>
-  </article>
-
-  Example: Field with Error
-  <article class="field is-error">
-    <label class="field__label" for="exampleInput3">Your Email</label>
-    <input class="field__input="exampleInput3" type="email" required="required" placeholder="Your email">
-    <span class="field__feedback">Sorry, that email is in use.</span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field for a select input
-  <article class="field">
-    <label class="field__label" for="exampleInput4" >Select your favorite</label>
-    <select class="field__input input--select" id="exampleInput4"  name="favorite-food">
-      <option>Pizza</option>
-      <option>Tacos</option>
-      <option>Burgers</option>
-    </select>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field for a textarea input
-  <article class="field">
-    <label class="field__label">Your Name</label>
-    <textarea class="field__input">Hello, there</textarea>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
--------------------------------------------------------- */
-.field {
-  position: relative;
-  margin-bottom: 2em; }
-
-.field__label {
-  display: block; }
-
-.field__hint {
-  color: #888;
-  font-size: .75em;
-  padding: .25em 0;
-  font-style: italic; }
-
-.field__feedback {
-  display: none;
-  font-size: .75em;
-  padding: .25em .75em;
-  background: rgba(218, 35, 0, 0.3);
-  color: white; }
-
-.field.is-error .field__feedback {
-  display: block; }
-
-.field.is-error input {
-  border: 1px solid rgba(218, 35, 0, 0.3); }
-
 /* @input group
 --------------------------------------------------------
 
@@ -4073,30 +4168,6 @@ fieldset {
       <label class="label--radio" for="favorite-food-1"><input id="favorite-food-1" name="favorite-food" type="radio" value="pizza"> Pizza</label>
       <label class="label--radio" for="favorite-food-2"><input id="favorite-food-2" name="favorite-food" type="radio" value="tacos"> Tacos</label>
       <label class="label--radio" for="favorite-food-3"><input id="favorite-food-3" name="favorite-food" type="radio" value="burgers"> Burgers</label>
-    </div>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field with input group of checkboxes
-  <article class="field">
-    <label class="field__label">Select your favorites</label>
-    <div class="field__input-group">
-      <label class="label--checkbox" for="favorite-food-4"><input id="favorite-food-4" name="favorite-food-alt" type="checkbox" value="pizza"> Pizza</label>
-      <label class="label--checkbox" for="favorite-food-5"><input id="favorite-food-5" name="favorite-food-alt" type="checkbox" value="tacos"> Tacos</label>
-      <label class="label--checkbox" for="favorite-food-6"><input id="favorite-food-6" name="favorite-food-alt" type="checkbox" value="burgers"> Burgers</label>
-    </div>
-    <span class="field__feedback"></span>
-    <span class="field__hint"></span>
-  </article>
-
-  Example: Field with input group list modifier
-  <article class="field">
-    <label class="field__label">Select your favorites</label>
-    <div class="field__input-group--list">
-      <label class="label--checkbox" for="favorite-food-7"><input id="favorite-food-7" name="favorite-food-alt2" type="checkbox" value="pizza"> Pizza</label>
-      <label class="label--checkbox" for="favorite-food-8"><input id="favorite-food-8" name="favorite-food-alt2" type="checkbox" value="tacos"> Tacos</label>
-      <label class="label--checkbox" for="favorite-food-9"><input id="favorite-food-9" name="favorite-food-alt2" type="checkbox" value="burgers"> Burgers</label>
     </div>
     <span class="field__feedback"></span>
     <span class="field__hint"></span>
@@ -4517,6 +4588,276 @@ table {
 .table--striped tbody tr:nth-of-type(odd) {
   background-color: #eee; }
 
+/* @GRID
+--------------------------------------------------------
+
+  1- Grid based on html using float
+
+  Set for screen sizes XS (default), S (4 columns), M (8 columns), L and above (12)
+
+  Example:
+  <div class="col-2 col-s-4 col-l-6></div>
+
+
+  2- Grid based on HTML using float
+  Use SUSY2 library: http://susy.readthedocs.io/
+
+
+  3- Grid based on HTML using flexbox
+  Use SUSY3 library: http://oddbird.net/susy/
+
+
+------------------------------------------------------ */
+.grid {
+  zoom: 1;
+  margin-left: -1.2rem;
+  width: calc(100% + 1.2rem);
+  margin-bottom: 1.2rem; }
+  .grid:before, .grid:after {
+    content: " ";
+    display: table; }
+  .grid:after {
+    clear: both; }
+  .grid .col-xs-1 {
+    float: left;
+    width: calc(((100% - 1.2rem * 2) / 2) * 1 + (1.2rem * (1 - 1)));
+    margin-left: 1.2rem; }
+  .grid .col-xs-2 {
+    float: left;
+    width: calc(((100% - 1.2rem * 2) / 2) * 2 + (1.2rem * (2 - 1)));
+    margin-left: 1.2rem; }
+
+.only-s,
+.only-m,
+.only-l {
+  display: none;
+  visibility: hidden; }
+
+.hide-xs {
+  display: none;
+  visibility: hidden; }
+
+@media only screen and (min-width: 840px) {
+  .grid {
+    zoom: 1;
+    margin-left: -1.2rem;
+    width: calc(100% + 1.2rem);
+    margin-bottom: 1.2rem; }
+    .grid:before, .grid:after {
+      content: " ";
+      display: table; }
+    .grid:after {
+      clear: both; }
+    .grid .col-s-1 {
+      float: left;
+      width: calc(((100% - 1.2rem * 4) / 4) * 1 + (1.2rem * (1 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-s-2 {
+      float: left;
+      width: calc(((100% - 1.2rem * 4) / 4) * 2 + (1.2rem * (2 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-s-3 {
+      float: left;
+      width: calc(((100% - 1.2rem * 4) / 4) * 3 + (1.2rem * (3 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-s-4 {
+      float: left;
+      width: calc(((100% - 1.2rem * 4) / 4) * 4 + (1.2rem * (4 - 1)));
+      margin-left: 1.2rem; }
+  .only-xs,
+  .only-m,
+  .only-l {
+    display: none;
+    visibility: hidden; }
+  .hide-s {
+    display: none;
+    visibility: hidden; } }
+
+@media only screen and (min-width: 1024px) {
+  .grid {
+    zoom: 1;
+    margin-left: -1.2rem;
+    width: calc(100% + 1.2rem);
+    margin-bottom: 1.2rem; }
+    .grid:before, .grid:after {
+      content: " ";
+      display: table; }
+    .grid:after {
+      clear: both; }
+    .grid .col-m-1 {
+      float: left;
+      width: calc(((100% - 1.2rem * 8) / 8) * 1 + (1.2rem * (1 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-m-2 {
+      float: left;
+      width: calc(((100% - 1.2rem * 8) / 8) * 2 + (1.2rem * (2 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-m-3 {
+      float: left;
+      width: calc(((100% - 1.2rem * 8) / 8) * 3 + (1.2rem * (3 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-m-4 {
+      float: left;
+      width: calc(((100% - 1.2rem * 8) / 8) * 4 + (1.2rem * (4 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-m-5 {
+      float: left;
+      width: calc(((100% - 1.2rem * 8) / 8) * 5 + (1.2rem * (5 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-m-6 {
+      float: left;
+      width: calc(((100% - 1.2rem * 8) / 8) * 6 + (1.2rem * (6 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-m-7 {
+      float: left;
+      width: calc(((100% - 1.2rem * 8) / 8) * 7 + (1.2rem * (7 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-m-8 {
+      float: left;
+      width: calc(((100% - 1.2rem * 8) / 8) * 8 + (1.2rem * (8 - 1)));
+      margin-left: 1.2rem; }
+  .only-xs,
+  .only-s,
+  .only-l {
+    display: none;
+    visibility: hidden; }
+  .hide-m {
+    display: none;
+    visibility: hidden; } }
+
+@media only screen and (min-width: 1280px) {
+  .grid {
+    zoom: 1;
+    margin-left: -1.2rem;
+    width: calc(100% + 1.2rem);
+    margin-bottom: 1.2rem; }
+    .grid:before, .grid:after {
+      content: " ";
+      display: table; }
+    .grid:after {
+      clear: both; }
+    .grid .col-l-1 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 1 + (1.2rem * (1 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-2 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 2 + (1.2rem * (2 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-3 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 3 + (1.2rem * (3 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-4 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 4 + (1.2rem * (4 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-5 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 5 + (1.2rem * (5 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-6 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 6 + (1.2rem * (6 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-7 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 7 + (1.2rem * (7 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-8 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 8 + (1.2rem * (8 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-9 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 9 + (1.2rem * (9 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-10 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 10 + (1.2rem * (10 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-11 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 11 + (1.2rem * (11 - 1)));
+      margin-left: 1.2rem; }
+    .grid .col-l-12 {
+      float: left;
+      width: calc(((100% - 1.2rem * 12) / 12) * 12 + (1.2rem * (12 - 1)));
+      margin-left: 1.2rem; }
+  .only-xs,
+  .only-s,
+  .only-m {
+    display: none;
+    visibility: hidden; }
+  .hide-l {
+    display: none;
+    visibility: hidden; } }
+
+/**
+
+   @site
+--------------------------------------------------------
+  modules/_site.scss
+--------------------------------------------------------
+
+  We use the naming convention of .site-* for global
+  modules like the header, main, and footer.
+
+  Sometimes it's beneficial to have a wrapping element
+  around the site, directly following the <body>. In
+  this case, we call that .site.
+
+------------------------------------------------------ */
+.site {
+  zoom: 1;
+  display: block; }
+  .site:before, .site:after {
+    content: " ";
+    display: table; }
+  .site:after {
+    clear: both; }
+
+/*
+
+  @site-nav
+--------------------------------------------------------
+
+  The main site navigation.
+
+-----------------------------------------------------  */
+.site-nav__item {
+  display: block; }
+
+/**
+
+   @site
+--------------------------------------------------------
+  modules/_site.scss
+--------------------------------------------------------
+
+  We use the naming convention of .site-* for global
+  modules like the header, main, and footer.
+
+  Sometimes it's beneficial to have a wrapping element
+  around the site, directly following the <body>. In
+  this case, we call that .site.
+
+------------------------------------------------------ */
+.site-sidebar {
+  /* @extend %grid-item--12;
+
+  @include media(S) {
+    @extend %grid-item--12;
+  }
+
+  @include media(M) {
+    @extend %grid-item--2;
+  }
+
+  @include media(L) {
+    @extend %grid-item--3;
+  }*/ }
+
 /**
 
   @container
@@ -4544,7 +4885,7 @@ table {
   zoom: 1;
   margin-left: auto;
   margin-right: auto;
-  max-width: 70em;
+  max-width: calc(100% - $base-size);
   padding: 0 1.6875em;
   /*@include bp-at-least($breakpoint__sm) {
     padding: 0 3*$unit;
@@ -4554,74 +4895,3 @@ table {
     display: table; }
   .container:after {
     clear: both; }
-
-/*.grid-display {
-  display: grid;
-  //grid-template-columns:;
-  grid-gap: 10px;
-  background-color: #fff;
-  color: #444;
-}*/
-.site {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 50px 100% 50px; }
-  .site__header {
-    grid-column: span 12; }
-  .site__sidebar {
-    grid-column: span 2; }
-  .site__main {
-    grid-column: span 10; }
-  .site__footer {
-    grid-column: span 12;
-    margin-bottom: auto; }
-
-/**
-
-  @hide
----------------------------------------------------------
-  layout/_hide.scss
---------------------------------------------------------
-
-  Utility state classes to hide things in different ways
-
---------------------------------------------------------- */
-.is-hidden {
-  display: none !important;
-  visibility: hidden !important; }
-
-.is-visually-hidden {
-  position: absolute;
-  left: -9999%;
-  height: 0;
-  padding: 0;
-  margin: 0;
-  opacity: 0; }
-
-/*
-@include bp-at-least($breakpoint__xs) {
-  .hide__xs {
-    display: none;
-  }
-}
-@include bp-at-least($breakpoint__sm) {
-  .hide__sm {
-    display: none;
-  }
-}
-@include bp-at-least($breakpoint__md) {
-  .hide__md {
-    display: none;
-  }
-}
-@include bp-at-least($breakpoint__lg) {
-  .hide__lg {
-    display: none;
-  }
-}
-@include bp-at-least($breakpoint__xl) {
-  .hide__xl {
-    display: none;
-  }
-}
-*/

@@ -1,24 +1,66 @@
 //HTML BASED GRID
 //FLOAT / INLINE
-.grid-html-float,
-%grid-html-float {
-  @include clearfix;
-  margin-left: -$grid-space;
-  width: calc(100% + #{$grid-space});
-  margin-bottom: $grid-space;
+$grid-space: 1.2rem;
+$col-number: 2;
+$size: xs;
+@include grid-html-float($size, $col-number);
 
-  @for $i from 1 through $col-number {
-    .grid-item--#{$i} {
-      height: 300px;
-      float: left;
-      background: cornflowerblue;
+.only-s,
+.only-m,
+.only-l {
+  @include  not-displayed;
+}
 
-      //Cada item interior =
-      //Width de la pantalla - los márgenes de los elementos / por el número de columnas
-      //eso multiplicado por i para saber cuántas se agrupan
-      //y sumando los margenes de las columnas que se han agrupado
-      width: calc(((100% - #{$grid-space} * #{$col-number}) / #{$col-number}) * #{$i} + (#{$grid-space} * (#{$i} - 1)));
-      margin-left: $grid-space;
-    }
+.hide-xs {
+  @include  not-displayed;
+}
+
+
+@include media(S) {
+  $col-number: 4;
+  $size: s;
+  @include grid-html-float($size, $col-number);
+
+  .only-xs,
+  .only-m,
+  .only-l {
+    @include  not-displayed;
+  }
+
+  .hide-s {
+    @include  not-displayed;
+  }
+}
+
+@include media(M) {
+  $col-number: 8;
+  $size: m;
+  @include grid-html-float($size, $col-number);
+
+  .only-xs,
+  .only-s,
+  .only-l {
+    @include  not-displayed;
+  }
+
+  .hide-m {
+    @include  not-displayed;
+  }
+}
+
+
+@include media(L) {
+  $col-number: 12;
+  $size: l;
+  @include grid-html-float($size, $col-number);
+
+  .only-xs,
+  .only-s,
+  .only-m {
+    @include  not-displayed;
+  }
+
+  .hide-l {
+    @include  not-displayed;
   }
 }

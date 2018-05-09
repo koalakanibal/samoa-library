@@ -1,51 +1,47 @@
-// set grid space
-$grid-space: 1.2rem;
-$col-number: 2;
+/* @GRID
+--------------------------------------------------------
+
+  1- Grid based on html using float
+
+  Set for screen sizes XS (default), S (4 columns), M (8 columns), L and above (12)
+
+  Example:
+  <div class="col-2 col-s-4 col-l-6></div>
 
 
-//DISPLAY GRID
-/*.grid-display {
-  display: grid;
-  //grid-template-columns:;
-  grid-gap: 10px;
-  background-color: #fff;
-  color: #444;
-}*/
+  2- Grid based on HTML using float
+  Use SUSY2 library: http://susy.readthedocs.io/
 
-.site {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 50px 100% 50px;
 
-  &__header {
-    grid-column: span 12;
-  }
+  3- Grid based on HTML using flexbox
+  Use SUSY3 library: http://oddbird.net/susy/
 
-  &__sidebar {
-    grid-column: span 2;
-  }
 
-  &__main {
-    grid-column: span 10;
-  }
+------------------------------------------------------ */
 
-  &__footer {
-    grid-column: span 12;
-    margin-bottom: auto;
+@mixin grid-html-float($size, $col-number){
+  .grid,
+  %grid {
+    @include clearfix;
+    margin-left: -$grid-space;
+    width: calc(100% + #{$grid-space});
+    margin-bottom: $grid-space;
+
+    @for $i from 1 through $col-number {
+      .col-#{$size}-#{$i},
+      %col-#{$size}-#{$i} {
+        float: left;
+
+        //Cada item interior =
+        //Width de la pantalla - los márgenes de los elementos / por el número de columnas
+        //eso multiplicado por i para saber cuántas se agrupan
+        //y sumando los margenes de las columnas que se han agrupado
+        width: calc(((100% - #{$grid-space} * #{$col-number}) / #{$col-number}) * #{$i} + (#{$grid-space} * (#{$i} - 1)));
+        margin-left: $grid-space;
+      }
+    }
   }
 }
 
 
-
-@include media(S) {
-  $col-number: 4;
-}
-
-@include media(M) {
-  $col-number: 8;
-}
-
-
-@include media(L) {
-  $col-number: 12;
-}
+@import "grid-html-float";
