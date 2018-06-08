@@ -10,6 +10,7 @@
 ---------------------------------------------------------  */
 @import url(vendors/_normalize.css);
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Fredericka+the+Great");
 /*!
  * Font Awesome Free 5.0.8 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
@@ -2688,6 +2689,22 @@ readers do not read off random characters that represent icons */
   position: static;
   width: auto; }
 
+/*!
+ * Font Awesome Free 5.0.8 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+@font-face {
+  font-family: 'FontAwesome';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../assets/webfonts/fa-solid-900.eot");
+  src: url("../assets/webfonts/fa-solid-900.eot?#iefix") format("embedded-opentype"), url("../assets/webfonts/fa-solid-900.woff2") format("woff2"), url("../assets/webfonts/fa-solid-900.woff") format("woff"), url("../assets/webfonts/fa-solid-900.ttf") format("truetype"), url("../assets/webfonts/fa-solid-900.svg#fontawesome") format("svg"); }
+
+.fa,
+.fas {
+  font-family: 'FontAwesome', sans-serif;
+  font-weight: 900; }
+
 /**
 
   @variables
@@ -2755,6 +2772,12 @@ readers do not read off random characters that represent icons */
 
   Example: @include truncate;
            @include dont-truncate;
+
+------------------------------------------------------ */
+/* Mixin text alignment
+--------------------------------------------------------
+
+  Example: @include text-align(right);
 
 ------------------------------------------------------ */
 /* Mixin text alignment
@@ -2886,13 +2909,59 @@ $XL: 1600px;
   This reset institutes the border-box box model and then
   block and margin/padding resets.
 
-  Throughout Skyline, each partial has it's own resets.
-  This allows you to only use what you need.
-
-  Credit goes to Normalize
+  Credit goes to Normalize and Erics Meyer's Reset
   http://normalize.css v2.1.0 http://git.io/normalize
+  https://meyerweb.com/
+
 
 --------------------------------------------------------- */
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
 *, *:before, *:after {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -3078,7 +3147,7 @@ input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled 
 /* Spacing margins
 --------------------------------------------------------
 
-  Example: .mt-3, pb-2
+  Example: .mt-3, pb-2 // @extend %mb-3
   We have -0 value to remove margin/padding
 
 ------------------------------------------------------ */
@@ -3157,6 +3226,21 @@ input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled 
 .mall-4 {
   margin: 64px; }
 
+.msides-0 {
+  margin: 0 0px; }
+
+.msides-1 {
+  margin: 0 16px; }
+
+.msides-2 {
+  margin: 0 32px; }
+
+.msides-3 {
+  margin: 0 48px; }
+
+.msides-4 {
+  margin: 0 64px; }
+
 .pt-0 {
   padding-top: 0px; }
 
@@ -3166,7 +3250,8 @@ input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled 
 .pt-2 {
   padding-top: 32px; }
 
-.pt-3 {
+.pt-3,
+.scrollable-section {
   padding-top: 48px; }
 
 .pt-4 {
@@ -3181,7 +3266,8 @@ input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled 
 .pb-2 {
   padding-bottom: 32px; }
 
-.pb-3 {
+.pb-3,
+.scrollable-section {
   padding-bottom: 48px; }
 
 .pb-4 {
@@ -3231,6 +3317,75 @@ input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled 
 
 .pall-4 {
   padding: 64px; }
+
+.psides-0 {
+  padding: 0 0px; }
+
+.psides-1 {
+  padding: 0 16px; }
+
+.psides-2 {
+  padding: 0 32px; }
+
+.psides-3 {
+  padding: 0 48px; }
+
+.psides-4 {
+  padding: 0 64px; }
+
+.text-white {
+  color: #fff !important; }
+
+.text-primary {
+  color: #0779B4 !important; }
+
+.text-muted {
+  color: #DDD !important; }
+
+.text-success {
+  color: #AABE3B !important; }
+
+.text-info {
+  color: #1F3655 !important; }
+
+.text-warning {
+  color: #E7C339 !important; }
+
+.text-danger {
+  color: #B82346 !important; }
+
+.text-gray-dark {
+  color: #636363 !important; }
+
+.bg-primary {
+  background-color: #0779B4 !important; }
+
+.bg-success {
+  background-color: #AABE3B !important; }
+
+.bg-info {
+  background-color: #1F3655 !important; }
+
+.bg-warning {
+  background-color: #E7C339 !important; }
+
+.bg-alert {
+  background-color: #B82346 !important; }
+
+.bg-orange {
+  background-color: #C56531 !important; }
+
+.bg-light {
+  background-color: #F3F3F3 !important; }
+
+.bg-dark {
+  background-color: #636363 !important; }
+
+.bg-white {
+  background-color: #fff !important; }
+
+.bg-black {
+  background-color: #000 !important; }
 
 /**
 
@@ -3534,9 +3689,11 @@ button:focus, button:active {
 
 -----------------------------------------------------  */
 code {
+  background: #F3F3F3;
+  display: block;
+  line-height: 1.5;
   vertical-align: middle;
-  padding: .25em .5em;
-  background: rgba(193, 199, 208, 0.3); }
+  padding: .25em .5em; }
 
 /**
 
@@ -3966,6 +4123,8 @@ Example: Dropdown error
 ------------------------------------------------------ */
 .dropdown {
   position: relative; }
+  .dropdown--focused .input-text__label {
+    color: #0779B4; }
 
 .dropdown-button {
   font-size: 14px;
@@ -3990,7 +4149,7 @@ Example: Dropdown error
   z-index: 5; }
   .dropdown-button__item-selected {
     color: #636363;
-    font-weight: 700; }
+    font-weight: 400; }
 
 select {
   width: 100%;
@@ -4453,6 +4612,17 @@ a {
 body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.35); }
 
+.site-nav {
+  margin-left: -1rem; }
+  .site-nav__item {
+    color: #0779B4;
+    border-left: 1.125em solid #DDD;
+    border-bottom: 1px solid #DDD;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    padding-left: 1rem;
+    text-decoration: none; }
+
 /**
 
   @quotes
@@ -4599,71 +4769,128 @@ table {
   <div class="col-2 col-s-4 col-l-6></div>
 
 
-  2- Grid based on HTML using float
+  2- Grid based on CCS using float
   Use SUSY2 library: http://susy.readthedocs.io/
 
 
-  3- Grid based on HTML using flexbox
+  3- Grid based on CSS using flexbox
   Use SUSY3 library: http://oddbird.net/susy/
 
 
 ------------------------------------------------------ */
-.grid {
+.wrapper {
   zoom: 1;
-  margin-left: -1.2rem;
+  position: relative;
   width: calc(100% + 1.2rem);
-  margin-bottom: 1.2rem; }
-  .grid:before, .grid:after {
+  margin-left: -1.2rem; }
+  .wrapper:before, .wrapper:after {
     content: " ";
     display: table; }
-  .grid:after {
+  .wrapper:after {
     clear: both; }
-  .grid .col-xs-1 {
-    float: left;
-    width: calc(((100% - 1.2rem * 2) / 2) * 1 + (1.2rem * (1 - 1)));
-    margin-left: 1.2rem; }
-  .grid .col-xs-2 {
-    float: left;
-    width: calc(((100% - 1.2rem * 2) / 2) * 2 + (1.2rem * (2 - 1)));
-    margin-left: 1.2rem; }
 
-.only-s,
-.only-m,
-.only-l {
-  display: none;
-  visibility: hidden; }
+.row {
+  padding: 0 1rem;
+  overflow: auto; }
 
-.hide-xs {
-  display: none;
-  visibility: hidden; }
+[class^="col-"],
+[class*="col-"] {
+  float: left;
+  margin-left: 1.2rem; }
+
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6 {
+  width: calc((100%/ 2) - (1.2rem * 1)); }
+
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: calc(100% - (1.2rem * 1)); }
+
+.col-1-xs {
+  width: calc((100% / 12) - (1.2rem * 1)); }
+
+.col-2-xs {
+  width: calc((100% / 6) - (1.2rem* 2)); }
+
+.col-3-xs {
+  width: calc((100% / 4) - (1.2rem * 3)); }
+
+.col-4-xs {
+  width: calc((100% / 3) - (1.2rem * 4)); }
+
+.col-5-xs {
+  width: calc((100% / (12 / 5)) - (1.2rem * 5)); }
+
+.col-6-xs {
+  width: calc((100% / 2) - (1.2rem * 6)); }
+
+.col-7-xs {
+  width: calc((100% / (12 / 7)) - (1.2rem * 7)); }
+
+.col-8-xs {
+  width: calc((100% / (12 / 8)) - (1.2rem * 8)); }
+
+.col-9-xs {
+  width: calc((100% / (12 / 9)) - (1.2rem * 9)); }
+
+.col-10-xs {
+  width: calc((100% / (12 / 10)) - (1.2rem * 10)); }
+
+.col-11-xs {
+  width: calc((100% / (12 / 11)) - (1.2rem * 11)); }
+
+.col-12-xs {
+  width: 100%; }
 
 @media only screen and (min-width: 840px) {
-  .grid {
-    zoom: 1;
-    margin-left: -1.2rem;
-    width: calc(100% + 1.2rem);
-    margin-bottom: 1.2rem; }
-    .grid:before, .grid:after {
-      content: " ";
-      display: table; }
-    .grid:after {
-      clear: both; }
-    .grid .col-s-1 {
-      float: left;
-      width: calc(((100% - 1.2rem * 4) / 4) * 1 + (1.2rem * (1 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-s-2 {
-      float: left;
-      width: calc(((100% - 1.2rem * 4) / 4) * 2 + (1.2rem * (2 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-s-3 {
-      float: left;
-      width: calc(((100% - 1.2rem * 4) / 4) * 3 + (1.2rem * (3 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-s-4 {
-      float: left;
-      width: calc(((100% - 1.2rem * 4) / 4) * 4 + (1.2rem * (4 - 1)));
-      margin-left: 1.2rem; }
+  .col-1 {
+    width: calc((100% / 4) - (1.2rem * 3)); }
+  .col-2 {
+    width: calc((100% / 4) - (1.2rem * 3)); }
+  .col-3 {
+    width: calc((100% / 4)  - (1.2rem * 3)); }
+  .col-4 {
+    width: calc((100% / 2) - (1.2rem * 1)); }
+  .col-5 {
+    width: calc((100% / 2) - (1.2rem * 1)); }
+  .col-6 {
+    width: calc((100% / 2) - (1.2rem * 1)); }
+  .col-7 {
+    width: calc((100% / 2) - (1.2rem * 1)); }
+  .col-8 {
+    width: calc((100% / 2) - (1.2rem * 1)); }
+  .col-9 {
+    width: calc(100% - 1.2rem); }
+  .col-10 {
+    width: calc(100% - 1.2rem); }
+  .col-11 {
+    width: calc(100% - 1.2rem); }
+  .col-12 {
+    width: 100%; }
+  .col-1-s {
+    width: calc((100% / 8) - (1.2rem * 7 / 8)); }
+  .col-2-s {
+    width: calc((100% / 4) - (1.2rem * 6 / 8)); }
+  .col-3-s {
+    width: calc((100% / (8 / 3)) - (1.2rem * 5 / 8)); }
+  .col-4-s {
+    width: calc((100% / 2) - (1.2rem * 8 / 12)); }
+  .col-5-s {
+    width: calc((100% / (12 / 5)) - (1.2rem * 7 / 12)); }
+  .col-6-s {
+    width: calc((100% / 2) - (1.2rem * (6 / 12))); }
+  .col-7-s {
+    width: calc((100% / (12 / 7)) - (1.2rem * 5 / 12)); }
+  .col-8-s {
+    width: 100%; }
   .only-xs,
   .only-m,
   .only-l {
@@ -4674,122 +4901,60 @@ table {
     visibility: hidden; } }
 
 @media only screen and (min-width: 1024px) {
-  .grid {
-    zoom: 1;
-    margin-left: -1.2rem;
-    width: calc(100% + 1.2rem);
-    margin-bottom: 1.2rem; }
-    .grid:before, .grid:after {
-      content: " ";
-      display: table; }
-    .grid:after {
-      clear: both; }
-    .grid .col-m-1 {
-      float: left;
-      width: calc(((100% - 1.2rem * 8) / 8) * 1 + (1.2rem * (1 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-m-2 {
-      float: left;
-      width: calc(((100% - 1.2rem * 8) / 8) * 2 + (1.2rem * (2 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-m-3 {
-      float: left;
-      width: calc(((100% - 1.2rem * 8) / 8) * 3 + (1.2rem * (3 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-m-4 {
-      float: left;
-      width: calc(((100% - 1.2rem * 8) / 8) * 4 + (1.2rem * (4 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-m-5 {
-      float: left;
-      width: calc(((100% - 1.2rem * 8) / 8) * 5 + (1.2rem * (5 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-m-6 {
-      float: left;
-      width: calc(((100% - 1.2rem * 8) / 8) * 6 + (1.2rem * (6 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-m-7 {
-      float: left;
-      width: calc(((100% - 1.2rem * 8) / 8) * 7 + (1.2rem * (7 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-m-8 {
-      float: left;
-      width: calc(((100% - 1.2rem * 8) / 8) * 8 + (1.2rem * (8 - 1)));
-      margin-left: 1.2rem; }
+  .col-1 {
+    width: calc((100% / 12) - (1.2rem)); }
+  .col-2 {
+    width: calc((100% / 6) - (1.2rem)); }
+  .col-3 {
+    width: calc((100% / 4) - (1.2rem)); }
+  .col-4 {
+    width: calc((100% / 3) - (1.2rem)); }
+  .col-5 {
+    width: calc((100% / (12 / 5)) - (1.2rem)); }
+  .col-6 {
+    width: calc((100% / 2) - (1.2rem)); }
+  .col-7 {
+    width: calc((100% / (12 / 7)) - (1.2rem)); }
+  .col-8 {
+    width: calc((100% / (12 / 8)) - (1.2rem)); }
+  .col-9 {
+    width: calc(((100% / 4) * 3) - (1.2rem)); }
+  .col-10 {
+    width: calc((100% / (12 / 10)) - (1.2rem)); }
+  .col-11 {
+    width: calc((100% / (12 / 11)) - (1.2rem)); }
+  .col-12 {
+    width: 100%; }
+  .col-1-m {
+    width: calc((100% / 12) - (1.2rem * 1)); }
+  .col-2-m {
+    width: calc((100% / 6) - (1.2rem* 2)); }
+  .col-3-m {
+    width: calc((100% / 4) - (1.2rem * 3)); }
+  .col-4-m {
+    width: calc((100% / 3) - (1.2rem * 4)); }
+  .col-5-m {
+    width: calc((100% / (12 / 5)) - (1.2rem * 5)); }
+  .col-6-m {
+    width: calc((100% / 2) - (1.2rem * 6)); }
+  .col-7-m {
+    width: calc((100% / (12 / 7)) - (1.2rem * 7)); }
+  .col-8-m {
+    width: calc((100% / (12 / 8)) - (1.2rem * 8)); }
+  .col-9-m {
+    width: calc((100% / (12 / 9)) - (1.2rem * 9)); }
+  .col-10-m {
+    width: calc((100% / (12 / 10)) - (1.2rem * 10)); }
+  .col-11-m {
+    width: calc((100% / (12 / 11)) - (1.2rem * 11)); }
+  .col-12-m {
+    width: 100%; }
   .only-xs,
   .only-s,
   .only-l {
     display: none;
     visibility: hidden; }
   .hide-m {
-    display: none;
-    visibility: hidden; } }
-
-@media only screen and (min-width: 1280px) {
-  .grid {
-    zoom: 1;
-    margin-left: -1.2rem;
-    width: calc(100% + 1.2rem);
-    margin-bottom: 1.2rem; }
-    .grid:before, .grid:after {
-      content: " ";
-      display: table; }
-    .grid:after {
-      clear: both; }
-    .grid .col-l-1 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 1 + (1.2rem * (1 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-2 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 2 + (1.2rem * (2 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-3 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 3 + (1.2rem * (3 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-4 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 4 + (1.2rem * (4 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-5 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 5 + (1.2rem * (5 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-6 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 6 + (1.2rem * (6 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-7 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 7 + (1.2rem * (7 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-8 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 8 + (1.2rem * (8 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-9 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 9 + (1.2rem * (9 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-10 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 10 + (1.2rem * (10 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-11 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 11 + (1.2rem * (11 - 1)));
-      margin-left: 1.2rem; }
-    .grid .col-l-12 {
-      float: left;
-      width: calc(((100% - 1.2rem * 12) / 12) * 12 + (1.2rem * (12 - 1)));
-      margin-left: 1.2rem; }
-  .only-xs,
-  .only-s,
-  .only-m {
-    display: none;
-    visibility: hidden; }
-  .hide-l {
     display: none;
     visibility: hidden; } }
 
@@ -4830,6 +4995,72 @@ table {
 
 /**
 
+  @site-header
+--------------------------------------------------------
+  modules/_site-header.scss
+--------------------------------------------------------
+
+  Site-wide header
+
+------------------------------------------------------ */
+.site-header {
+  background: #0779B4; }
+
+/* @branding
+--------------------------------------------------------
+
+  The logo & (optional) wordmark
+
+  Example: Branding logo
+  <a class="branding" href="/">
+    <img class="branding__logo img--title" src="images/logo.svg" alt="My Company">
+    <h1 class="branding__wordmark">My Company</h1>
+  </a>
+
+------------------------------------------------------ */
+.branding {
+  margin: 0 auto 1.125em;
+  text-decoration: none;
+  display: block;
+  text-align: center; }
+  @media only screen and (min-width: 1024px) {
+    .branding {
+      margin: 0;
+      float: left;
+      text-align: left; } }
+
+@media only screen and (min-width: 1024px) {
+  .branding__logo {
+    float: left;
+    margin-right: 1.125em; } }
+
+.branding__wordmark {
+  font-size: 36px;
+  font-size: 2.25rem;
+  color: #F3F3F3;
+  font-family: 'Fredericka the Great', cursive;
+  font-weight: 400;
+  line-height: 3.6rem;
+  height: 3rem;
+  white-space: nowrap;
+  margin: 0; }
+  @media only screen and (min-width: 1024px) {
+    .branding__wordmark {
+      font-size: 42px;
+      font-size: 2.625rem;
+      line-height: 4rem;
+      height: 4.6rem; } }
+
+/*
+
+  @site-nav
+--------------------------------------------------------
+
+  The main site navigation.
+
+-----------------------------------------------------  */
+/**
+
    @site
 --------------------------------------------------------
   modules/_site.scss
@@ -4843,20 +5074,18 @@ table {
   this case, we call that .site.
 
 ------------------------------------------------------ */
-.site-sidebar {
-  /* @extend %grid-item--12;
+/**
 
-  @include media(S) {
-    @extend %grid-item--12;
-  }
+  @site-main
+--------------------------------------------------------
+  modules/_site-main.scss
+--------------------------------------------------------
 
-  @include media(M) {
-    @extend %grid-item--2;
-  }
+  The site's main content
 
-  @include media(L) {
-    @extend %grid-item--3;
-  }*/ }
+------------------------------------------------------ */
+.scrollable-section {
+  border-bottom: 1px solid #636363; }
 
 /**
 
@@ -4895,3 +5124,26 @@ table {
     display: table; }
   .container:after {
     clear: both; }
+
+/**
+
+  @library-layout
+---------------------------------------------------------
+  layout/_library-layout.scss
+--------------------------------------------------------
+
+  Specifics styles only used for the layout of the library
+
+**/
+.color-swatch {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  font-size: 12px;
+  font-size: 0.75rem;
+  display: inline-block;
+  font-weight: 700;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  width: 4rem; }

@@ -42,11 +42,12 @@ $scrolls: visible, auto, hidden;
 /* Spacing margins
 --------------------------------------------------------
 
-  Example: .mt-3, pb-2
+  Example: .mt-3, pb-2 // @extend %mb-3
   We have -0 value to remove margin/padding
 
 ------------------------------------------------------ */
-.m {
+.m,
+%m {
   &t{
     @for $i from 0 through 4 {
       $value: $i;
@@ -96,9 +97,20 @@ $scrolls: visible, auto, hidden;
       }
     }
   }
+
+  &sides {
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        margin: 0 ($i) * $base-size;
+      }
+    }
+  }
 }
 
-.p {
+.p,
+%p {
   &t{
     @for $i from 0 through 4 {
       $value: $i;
@@ -145,6 +157,16 @@ $scrolls: visible, auto, hidden;
 
       &-#{$value} {
         padding: ($i) * $base-size;
+      }
+    }
+  }
+
+  &sides {
+    @for $i from 0 through 4 {
+      $value: $i;
+
+      &-#{$value} {
+        padding: 0 ($i) * $base-size;
       }
     }
   }

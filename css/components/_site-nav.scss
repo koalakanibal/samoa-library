@@ -1,0 +1,13 @@
+.site-nav {
+  margin-left: -1rem;
+
+  &__item {
+    color: $color-font-link;
+    border-left: $unit solid $color-grey-light;
+    border-bottom: 1px solid $color-grey-light;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    padding-left: 1rem;
+    text-decoration: none;
+  }
+}

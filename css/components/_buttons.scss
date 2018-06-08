@@ -41,7 +41,7 @@ button {
   color: $color-font-btn;
   cursor: pointer;
   @include border-radius(3px);
-  border: 1px solid $color__blue;
+  border: 1px solid $color-blue;
   @include font-size($font-regular);
   @extend %sans--bold;
   //text-transform: uppercase;

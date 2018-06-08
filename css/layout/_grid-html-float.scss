@@ -1,25 +1,92 @@
 //HTML BASED GRID
 //FLOAT / INLINE
+// grid
+$col-number: 12;
+$width: 100%;
+$gutter: 1.2rem;
+
+
+
+.wrapper {
+  @include clearfix;
+  position: relative;
+  width: calc(100% + #{$gutter});
+  margin-left: -1.2rem;
+}
+
+.row {
+  padding: 0 1rem;
+  overflow: auto;
+}
+
+[class^="col-"],
+[class*="col-"] {
+  float: left;
+  margin-left: 1.2rem;
+  //min-height: 0.125rem;
+}
+
+//XS
 $grid-space: 1.2rem;
 $col-number: 2;
 $size: xs;
-@include grid-html-float($size, $col-number);
 
-.only-s,
-.only-m,
-.only-l {
-  @include  not-displayed;
+.col-1,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6 {
+width: calc((#{$width }/ 2) - (#{$gutter} * 1));
 }
 
-.hide-xs {
-  @include  not-displayed;
+.col-7,
+.col-8,
+.col-9,
+.col-10,
+.col-11,
+.col-12 {
+  width: calc(#{$width} - (#{$gutter} * 1));
 }
 
 
-@include media(S) {
-  $col-number: 4;
-  $size: s;
-  @include grid-html-float($size, $col-number);
+.col-1-xs { width: calc((#{$width} / 12) - (#{$gutter} * 1)); }
+.col-2-xs { width: calc((#{$width} / 6) - (#{$gutter }* 2)); }
+.col-3-xs { width: calc((#{$width} / 4) - (#{$gutter} * 3)); }
+.col-4-xs { width: calc((#{$width} / 3) - (#{$gutter} * 4)); }
+.col-5-xs { width: calc((#{$width} / (12 / 5)) - (#{$gutter} * 5)); }
+.col-6-xs { width: calc((#{$width} / 2) - (#{$gutter} * 6)); }
+.col-7-xs { width: calc((#{$width} / (12 / 7)) - (#{$gutter} * 7)); }
+.col-8-xs { width: calc((#{$width} / (12 / 8)) - (#{$gutter} * 8)); }
+.col-9-xs { width: calc((#{$width} / (12 / 9)) - (#{$gutter} * 9)); }
+.col-10-xs { width: calc((#{$width} / (12 / 10)) - (#{$gutter} * 10)); }
+.col-11-xs { width: calc((#{$width} / (12 / 11)) - (#{$gutter} * 11)); }
+.col-12-xs { width: $width; }
+
+
+@media only screen and (min-width: $S) {
+  .col-1 { width: calc((#{$width} / 4) - (#{$gutter} * 3));}
+  .col-2 { width: calc((#{$width} / 4) - (#{$gutter} * 3));}
+  .col-3 { width: calc((#{$width} / 4)  - (#{$gutter} * 3));}
+  .col-4 { width: calc((#{$width} / 2) - (#{$gutter} * 1)); }
+  .col-5 { width: calc((#{$width} / 2) - (#{$gutter} * 1)); }
+  .col-6 { width: calc((#{$width} / 2) - (#{$gutter} * 1)); }
+  .col-7 { width: calc((#{$width} / 2) - (#{$gutter} * 1)); }
+  .col-8 { width: calc((#{$width} / 2) - (#{$gutter} * 1)); }
+  .col-9 { width: calc(#{$width} - #{$gutter}); }
+  .col-10 { width: calc(#{$width} - #{$gutter}); }
+  .col-11 { width: calc(#{$width} - #{$gutter}); }
+  .col-12 { width: $width; }
+
+  .col-1-s { width: calc((#{$width} / 8) - (#{$gutter} * 7 / 8)); }
+  .col-2-s { width: calc((#{$width} / 4) - (#{$gutter} * 6 / 8)); }
+  .col-3-s { width: calc((#{$width} / (8 / 3)) - (#{$gutter} * 5 / 8)); }
+  .col-4-s { width: calc((#{$width} / 2) - (#{$gutter} * 8 / 12)); }
+  .col-5-s { width: calc((#{$width} / (12 / 5)) - (#{$gutter} * 7 / 12)); }
+  .col-6-s { width: calc((#{$width} / 2) - (#{$gutter} * (6 / 12))); }
+  .col-7-s { width: calc((#{$width} / (12 / 7)) - (#{$gutter} * 5 / 12)); }
+  .col-8-s { width: $width }
+
 
   .only-xs,
   .only-m,
@@ -32,10 +99,32 @@ $size: xs;
   }
 }
 
-@include media(M) {
-  $col-number: 8;
-  $size: m;
-  @include grid-html-float($size, $col-number);
+@media only screen and (min-width: $M) {
+  .col-1 { width: calc((#{$width} / 12) - (#{$gutter})); }
+  .col-2 { width: calc((#{$width} / 6) - (#{$gutter})); }
+  .col-3 { width: calc((#{$width} / 4) - (#{$gutter})); }
+  .col-4 { width: calc((#{$width} / 3) - (#{$gutter})); }
+  .col-5 { width: calc((#{$width} / (12 / 5)) - (#{$gutter})); }
+  .col-6 { width: calc((#{$width} / 2) - (#{$gutter})); }
+  .col-7 { width: calc((#{$width} / (12 / 7)) - (#{$gutter})); }
+  .col-8 { width: calc((#{$width} / (12 / 8)) - (#{$gutter})); }
+  .col-9 { width: calc(((#{$width} / 4) * 3) - (#{$gutter})); }
+  .col-10 { width: calc((#{$width} / (12 / 10)) - (#{$gutter})); }
+  .col-11 { width: calc((#{$width} / (12 / 11)) - (#{$gutter})); }
+  .col-12 { width: $width; }
+
+  .col-1-m { width: calc((#{$width} / 12) - (#{$gutter} * 1)); }
+  .col-2-m { width: calc((#{$width} / 6) - (#{$gutter }* 2)); }
+  .col-3-m { width: calc((#{$width} / 4) - (#{$gutter} * 3)); }
+  .col-4-m { width: calc((#{$width} / 3) - (#{$gutter} * 4)); }
+  .col-5-m { width: calc((#{$width} / (12 / 5)) - (#{$gutter} * 5)); }
+  .col-6-m { width: calc((#{$width} / 2) - (#{$gutter} * 6)); }
+  .col-7-m { width: calc((#{$width} / (12 / 7)) - (#{$gutter} * 7)); }
+  .col-8-m { width: calc((#{$width} / (12 / 8)) - (#{$gutter} * 8)); }
+  .col-9-m { width: calc((#{$width} / (12 / 9)) - (#{$gutter} * 9)); }
+  .col-10-m { width: calc((#{$width} / (12 / 10)) - (#{$gutter} * 10)); }
+  .col-11-m { width: calc((#{$width} / (12 / 11)) - (#{$gutter} * 11)); }
+  .col-12-m { width: $width; }
 
   .only-xs,
   .only-s,
@@ -48,19 +137,3 @@ $size: xs;
   }
 }
 
-
-@include media(L) {
-  $col-number: 12;
-  $size: l;
-  @include grid-html-float($size, $col-number);
-
-  .only-xs,
-  .only-s,
-  .only-m {
-    @include  not-displayed;
-  }
-
-  .hide-l {
-    @include  not-displayed;
-  }
-}

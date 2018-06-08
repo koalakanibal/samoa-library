@@ -1,0 +1,58 @@
+@mixin text-color($parent, $color) {
+  #{$parent} {
+    color: $color !important;
+  }
+}
+
+@mixin bg-color($parent, $color) {
+  #{$parent} {
+    background-color: $color !important;
+  }
+}
+
+// Contextual colors
+
+.text-white {
+  color: #fff !important;
+}
+
+@include text-color('.text-primary', $color-primary);
+
+@include text-color('.text-muted', $color-grey-light);
+
+@include text-color('.text-success', $color-success);
+
+@include text-color('.text-info', $color-navy);
+
+@include text-color('.text-warning', $color-warning);
+
+@include text-color('.text-danger', $color-alert);
+
+// Font color
+
+@include text-color('.text-gray-dark', $color-grey);
+
+
+//
+// Contextual backgrounds
+//
+
+@include bg-color('.bg-primary', $color-primary);
+
+@include bg-color('.bg-success', $color-success);
+
+@include bg-color('.bg-info', $color-navy);
+
+@include bg-color('.bg-warning', $color-warning);
+
+@include bg-color('.bg-alert', $color-alert);
+
+@include bg-color('.bg-orange', $color-orange);
+
+@include bg-color('.bg-light', $color-offwhite);
+
+@include bg-color('.bg-dark', $color-grey);
+
+@include bg-color('.bg-white', $color-white);
+
+@include bg-color('.bg-black', $color-black);

@@ -12,3 +12,11 @@
 .site-main {
 
 }
+
+//One Page scroll
+
+.scrollable-section {
+  @extend %pt-3;
+  @extend %pb-3;
+  border-bottom: 1px solid $color-border;
+}

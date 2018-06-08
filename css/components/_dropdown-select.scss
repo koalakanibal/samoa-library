@@ -65,7 +65,7 @@ Example: Dropdown error
   //@include border-radius(3px);
   @include border-radius(3px 3px 0 0);
   @include truncate;
-  background: $color__white;
+  background: $color-white;
   border: 1px solid $color-border;
   color: $color-font-primary;
   display: inline-block;
@@ -99,7 +99,7 @@ select {
 .dropdown-options {
   //@include animation(dropdown-expand .3s linear);
   @include transition(max-height,.3s,ease-in-out,0s);
-  background: $color__white;
+  background: $color-white;
   border: 1px solid $color-border;
   color: $color-font-primary;
   display: block;
@@ -118,7 +118,7 @@ select {
   &__item {
     @include font-size($font-regular);
     @include truncate;
-    border-bottom: 1px solid $color__grey--light;
+    border-bottom: 1px solid $color-grey-light;
     display: block;
     font-weight: $regular;
     height: 2rem;
@@ -132,7 +132,7 @@ select {
     &:hover,
     &--highlighted {
       background: $color-primary;
-      color: $color__white;
+      color: $color-white;
       cursor: pointer;
     }
   }
@@ -163,8 +163,8 @@ select {
     }
     .dropdown-button {
       //background: $color-btn-disabled;
-      border-color: $color__grey--light;
-      color: $color__grey--light;
+      border-color: $color-grey-light;
+      color: $color-grey-light;
       pointer-events: none;
 
       /*&::before {
@@ -176,12 +176,12 @@ select {
 
   &.dropdown--error {
     .input-text__label {
-      color: $color__error;
+      color: $color-alert;
     }
     .dropdown-button {
       //background: $color-btn-disabled;
-      border-color: $color__error;
-      color: $color__error;
+      border-color: $color-alert;
+      color: $color-alert;
     }
   }
 }

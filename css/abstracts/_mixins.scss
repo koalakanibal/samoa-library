@@ -46,6 +46,18 @@
 }
 
 
+/* Mixin text alignment
+--------------------------------------------------------
+
+  Example: @include text-align(right);
+
+------------------------------------------------------ */
+
+@mixin align($value) {
+  float: $value;
+}
+
+
 /* Mixin borders
 --------------------------------------------------------
   Can be equal or different

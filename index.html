@@ -2,174 +2,394 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <title>***YOUR-TITLE-HERE***</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>***YOUR-TITLE-HERE***</title>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/screen.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/main.css">
 
-  <!-- Canonical Meta -->
-  <link rel="canonical" href="**YOUR-URL-HERE***">
+    <!-- Canonical Meta -->
+    <link rel="canonical" href="Matrix Template">
 
-  <!-- Viewport Meta-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Viewport Meta-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- SEO Meta -->
-  <meta name="description" content="***YOUR-CONTENT-HERE-***">
-  <meta name="keywords" content="***YOUR-CONTENT-HERE-***">
-  <meta name="robots" content="INDEX,FOLLOW">
+    <!-- SEO Meta -->
+    <meta name="description" content="***YOUR-CONTENT-HERE-***">
+    <meta name="keywords" content="***YOUR-CONTENT-HERE-***">
+    <meta name="robots" content="INDEX,FOLLOW">
 
-  <!-- Favicons -->
-  <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
-  <meta name="apple-mobile-web-app-title" content="***YOUR-SITE'S-NAME-HERE-***">
+    <!-- Favicons -->
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-precomposed.png">
+    <meta name="apple-mobile-web-app-title" content="***YOUR-SITE'S-NAME-HERE-***">
 
-  <!-- Facebook -->
-  <meta property="og:image" content="***YOUR-URL-HERE-***/images/avatar.png">
-  <meta property="og:title" content="***YOUR-TITLE-HERE-***">
-  <meta property="og:site_name" content="***YOUR-SITE'S-NAME-HERE-***">
-  <meta property=" og:url" content="***YOUR-URL-HERE-***">
-  <meta property="og:description" content="***YOUR-CONTENT-HERE-***">
+    <!-- Facebook -->
+    <meta property="og:image" content="***YOUR-URL-HERE-***/images/avatar.png">
+    <meta property="og:title" content="***YOUR-TITLE-HERE-***">
+    <meta property="og:site_name" content="***YOUR-SITE'S-NAME-HERE-***">
+    <meta property=" og:url" content="***YOUR-URL-HERE-***">
+    <meta property="og:description" content="***YOUR-CONTENT-HERE-***">
 
-  <!-- Windows 8 Pin app to start screen -->
-  <meta name="msapplication-TileColor" content="****BRAND-COLOR-HERE***">
-  <meta name="msapplication-TileImage" content="***YOUR-URL-HERE-***/apple-touch-icon-precomposed.png">
+    <!-- Windows 8 Pin app to start screen -->
+    <meta name="msapplication-TileColor" content="****BRAND-COLOR-HERE***">
+    <meta name="msapplication-TileImage" content="***YOUR-URL-HERE-***/apple-touch-icon-precomposed.png">
 
-  </head>
+</head>
 
 
-  <body>
+<body>
+<div class="site">
+    <div class="wrapper">
+       <header class="site-header row">
+           <div class="col-12">
+               <a class="branding" href="/">
+                   <!--<img class="branding__logo" src="images/hungryk-logo.png" alt="Site Name: hungryK">-->
+                   <h1 class="branding__wordmark">hungryK</h1>
+               </a>
+           </div>
+       </header>
+       <div class="site-content row">
+           <div class=" col-12 col-3-m">
+               <aside class="site-sidebar">
+                   <nav class="site-nav">
+                       <a class="site-nav__item" href="#index"><span class=" fas fa-info-circle"></span> Introducción</a>
+                       <a class="site-nav__item" href="#colors"><span class="fas fa-eye-dropper"></span> Colores</a>
+                       <a class="site-nav__item" href="#typography"><span class="fas fa-font"></span> Tipografía</a>
+                       <a class="site-nav__item" href="#layout"><span class="fas fa-th-list"></span> Layout</a>
+                       <a class="site-nav__item" href="#buttons"><span class="fas fa-hand-point-up"></span> Botones</a>
+                       <a class="site-nav__item" href="#forms"><span class="fas fa-edit"></span> Form</a>
+                   </nav>
+               </aside>
+           </div>
+           <main class="site-main col-9" role="main">
+               <div class="scrollable-section">
+                   <a name="index"></a>
+                   <h2>Introducción</h2>
+                   <div>
+                       <h3>Librería de componentes HTML/CSS</h3>
+                       <p class="regular-text">Párrafo: fas fas away, behind the word mountains, fas from the countries Vokalia and
+                           Consonantia, there live the blind texts.
+                           Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A
+                           small river named Duden
+                           flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in
+                           which roasted parts of
+                           sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is
+                           an almost unorthographic life </p>
+                   </div>
+               </div>
+               <div class="scrollable-section">
+                   <a name="colors"></a>
+                   <h2>Colores</h2>
+                   <div class="wrapper">
+                       <div class="col-6">
+                           <h3>Colores primarios</h3>
+                           <ul>
+                               <li class="color-swatch bg-primary text-white">#0779B4</li>
+                               <li class="color-swatch bg-info text-white">#1F3655</li>
+                               <li class="color-swatch bg-dark text-white">#636363</li>
+                               <li class="color-swatch bg-light text-gray-dark">#F3F3F3</li>
+                               <li class="color-swatch bg-black text-white">#000000</li>
+                               <li class="color-swatch bg-white text-gray-dark" style="border: 1px solid grey">#FFFFFF</li>
+                           </ul>
+                       </div>
+                       <div class="col-6">
+                           <h3>Colores secundarios</h3>
+                           <ul>
+                               <li class="color-swatch bg-alert text-white">#B82346</li>
+                               <li class="color-swatch bg-warning text-white">#E7C339</li>
+                               <li class="color-swatch bg-orange text-white">#C56531</li>
+                               <li class="color-swatch bg-success text-white">#AABE3B</li>
+                           </ul>
+                       </div>
+                   </div>
+                   <div class="wrapper">
+                       <div class="col-5">
+                           <h4>Casos de uso: background</h4>
+                           <ul>
+                               <li class="bg-primary text-white">.bg-primary</li>
+                               <li class="bg-info text-white">.bg-info</li>
+                               <li class="bg-dark text-white">.bg-dark</li>
+                               <li class="bg-light text-gray-dark">.bg-light</li>
+                               <li class="bg-black text-white">.bg-dark</li>
+                               <li class="bg-white text-gray-dark" style="border: 1px solid grey">.bg-white</li>
+                               <li class="bg-alert text-white">.bg-alert</li>
+                               <li class="bg-warning text-white">.bg-warning</li>
+                               <li class="bg-orange text-white">.bg-orange</li>
+                               <li class="bg-success text-white">.bg-success</li>
+                           </ul>
 
-    <div class="site">
+                           <code class="language-html" data-lang="html">
+                               &lt;div class="bg-primary"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-info"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-dark"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-light"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-black"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-white"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-alert"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-warning"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-orange"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-success"&gt;&lt;/div&gt;
+                           </code>
+                       </div>
+                       <div class="col-7">
+                           <h4>Casos de uso: text</h4>
+                           <code class="language-html" data-lang="html">
+                               &lt;div class="text-primary"&gt;<span class="text-primary">Text primary color</span>&lt;/div&gt;<br/>
+                               &lt;div class="bg-info"&gt;<span class="text-info">Text infoy color</span>&lt;/div&gt;<br/>
+                               &lt;div class="bg-dark"&gt;<span class="text-dark">Text dark color</span>&lt;/div&gt;<br/>
+                               &lt;div class="bg-light"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-black"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-white"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-alert"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-warning"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-orange"&gt;&lt;/div&gt;<br/>
+                               &lt;div class="bg-success"&gt;&lt;/div&gt;
+                           </code>
+                       </div>
 
-      <header class="site-header" role="banner">
-        <div class="container">
-          <a class="branding" href="/">
-            <img class="branding__logo" src="images/fpo-logo.png" alt="Site Name">
-            <h1 class="branding__wordmark">Site Name</h1>
-          </a>
-          <nav class="site-nav">
-            <a href="index.html">Home</a>
-            <a href="example-grids.html">Grids</a>
-            <a href="example-modules.html">Modules</a>
-            <a href="example-forms.html">Forms</a>
+                   </div>
 
-          </nav>
-        </div>
-      </header>
+               </div>
 
-      <div class="grid">
-        <div class="grid-item--1"></div>
-        <div class="grid-item--3"></div>
-        <div class="grid-item--1"></div>
-        <div class="grid-item--1"></div>
-        <div class="grid-item--4"></div>
-        <div class="grid-item--1"></div>
-        <div class="grid-item--1"></div>
-        <div class="grid-item--1"></div>
-        <div class="grid-item--2"></div>
-        <div class="grid-item--1"></div>
-        <div class="grid-item--1"></div>
-        <div class="grid-item--12"></div>
+               <div class="scrollable-section">
+                   <a name="typography"></a>
+                   <h2>Tipografías</h2>
+                   <div>
+                       <h3>Encabezados</h3>
+                       <h1 class="header-1">Encabezado 1</h1>
+                       <h2 class="header-2">Encabezado 2</h2>
+                       <h3 class="header-3">Encabezado 3</h3>
+                       <h4 class="header-4">Encabezado 4</h4>
+                       <p class="regular-text">Párrafo: fas fas away, behind the word mountains, fas from the countries Vokalia and
+                           Consonantia, there live the blind texts.
+                           Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A
+                           small river named Duden
+                           flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in
+                           which roasted parts of
+                           sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is
+                           an almost unorthographic life </p>
+                       <p class="small-text">Párrafo 2: fas fas away, behind the word mountains, fas from the countries Vokalia and
+                           Consonantia, there live the blind texts.
+                           Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A
+                           small river named Duden
+                           flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in
+                           which roasted parts of
+                           sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is
+                           an almost unorthographic life </p>
+                   </div>
+               </div>
+               <div class="scrollable-section">
+                   <a name="buttons"></a>
+                   <h2>Botones</h2>
+                   <div>
+                       <h3>Primary button</h3>
+                       <button class="btn">Botón primario</button>
+                       <button class="btn btn--disabled">Botón primario disabled</button>
+                       <a class="btn" href="#">link estilo botón primario</a>
+                       <button class="btn btn--inline">Botón primario</button>
+                       <button class="btn btn-secondary">Botón secundario</button>
+                       <button class="btn btn-secondary btn-secondary--disabled">Botón secundario disabled</button>
+                       <a class="btn btn-secondary" href="#">link estilo botón secundario</a>
+                       <button class="btn btn-panic">Botón panic</button>
+                       <button class="btn btn-panic btn-panic--disabled">Botón panic disabled</button>
+                       <a class="btn btn-panic" href="#">link estilo botón panic</a>
 
-      </div>
-      <div class="grid">
-        <div class="kk"></div>
-        <div class="kkk"></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class=""></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
+                       <h3>Large version</h3>
+                       <button class="btn btn--large">Botón primario large</button>
+                       <button class="btn btn-secondary btn--large">Botón secundario large</button>
+                       <button class="btn btn-panic btn--large">Botón panic large</button>
 
-      </div>
+                       <h3>Block version</h3>
+                       <button class="btn btn--block">Botón primario block</button>
+                       <button class="btn btn-secondary btn--block">Botón secundario block</button>
+                       <button class="btn btn-panic btn--block">Botón panic block</button>
 
-      <main class="site-main" role="main">
+                       <h3>Inline version</h3>
+                       <button class="btn btn--inline">Botón primario inline</button>
+                       <button class="btn btn-secondary btn--inline">Botón secundario inline</button>
+                       <button class="btn btn-panic btn--inline">Botón panic inline</button>
+                   </div>
+               </div>
+               <div class="scrollable-section">
+                   <a name="forms"></a>
+                   <h2 class="header-2">Form</h2>
+                   <div class="mb-4">
+                       <h3 class="header-3">Checkbox</h3>
+                       <span class="checkbox">
+                    <input type="checkbox" id="cbox1" class="checkbox__input">
+                    <label for="cbox1" class="checkbox__label">Checkbox Label</label>
+                     </span>
+                       <span class="checkbox">
+                    <input type="checkbox" id="cbox1" class="checkbox__input" checked>
+                    <label for="cbox1" class="checkbox__label">Checkbox Label</label>
+                     </span>
+                       <span class="checkbox checkbox--disabled">
+                    <input type="checkbox" id="cbox1" class="checkbox__input">
+                    <label for="cbox1" class="checkbox__label">Checkbox Disabled Label</label>
+                </span>
+                   </div>
+                   <div class="mb-4">
+                       <h3 class="header-3">Radio button</h3>
+                       <span class="radio">
+                          <input type="radio" id="radio0" name="frequency-checkbox" value="0" class="radio__input">
+                          <label for="radio0" class="radio__label">Radio Label</label>
+                        </span>
+                       <span class="radio">
+                          <input type="radio" id="radio0" name="frequency-checkbox" value="0" class="radio__input" checked>
+                          <label for="radio0" class="radio__label">Radio Label</label>
+                        </span>
+                       <span class="radio radio--disabled">
+                          <input type="radio" id="radio0" name="frequency-checkbox" value="0" class="radio__input">
+                          <label for="radio0" class="radio__label">Radio Disabled Label</label>
+                        </span>
+                   </div>
+                   <div class="mb-4">
+                       <h3 class="header-3 mb-2">Input text</h3>
+                       <div class="wrapper">
+                           <div class="col-6 mb-1">
+                            <span class="input-text">
+                                <span class="input-text__label">Input Text Label</span>
+                                <input placeholder="Volume Name" class="input-text__field">
+                            </span>
+                           </div>
+                           <div class="col-6 col-last mb-1">
+                            <span class="input-text input-text--focus">
+                                <span class="input-text__label">Input Text Focus Label</span>
+                                <input placeholder="Volume Name" class="input-text__field" focus />
+                            </span>
+                           </div>
+                           <div class="col-6 mb-1">
+                            <span class="input-text input-text--disabled">
+                                <span class="input-text__label">Input Text Disabled Label</span>
+                                <input placeholder="Volume Name" class="input-text__field">
+                            </span>
+                           </div>
+                           <div class="col-6 col-last mb-1">
+                            <span class="input-text input-text--error">
+                                <span class="input-text__label">Input Text Error Label</span>
+                                <input placeholder="Volume Name" class="input-text__field">
+                            </span>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="mb-4">
+                       <h3 class="header-3">Input dropdown</h3>
+                       <div class="wrapper">
+                           <div class="col-6 mb-1">
+                               <div class="dropdown dropdown--collapsed">
+                                   <span class="input-text__label">Dropdown Collapsed Label</span>
+                                   <button class="dropdown-button icon-collapsed">Select a name</button>
+                                   <ul class="dropdown-options">
+                                       <li class="dropdown-options__item">Irene</li>
+                                       <li class="dropdown-options__item">Tubal</li>
+                                       <li class="dropdown-options__item">Michal</li>
+                                   </ul>
+                               </div>
+                           </div>
+                           <div class="col-6 col-last mb-1">
+                               <div class="dropdown">
+                                   <span class="input-text__label">Dropdown Label</span>
+                                   <button class="dropdown-button icon-collapsed">Select an option</button>
+                                   <ul class="dropdown-options">
+                                       <li class="dropdown-options__item">Option 1</li>
+                                       <li class="dropdown-options__item">Option 2</li>
+                                       <li class="dropdown-options__item">Option 3</li>
+                                       <li class="dropdown-options__item">Option 4</li>
+                                   </ul>
+                               </div>
+                           </div>
 
-        <section class="block container">
-          <div class="gw sm-two-up lg-four-up">
-            <div class="g">
-              <article class="callout">
-                <img class="callout__media" src="images/fpo-icon.png">
-                <h3 class="callout__title">Feature</h3>
-                <p>This callout is very impressive, and should command your attention</p>
-              </article>
+                           <div class="col-6 mb-1">
+                               <div class="dropdown dropdown--collapsed dropdown--disabled">
+                                   <span class="input-text__label">Dropdown Label</span>
+                                   <button class="dropdown-button icon-collapsed">Select a name</button>
+                                   <ul class="dropdown-options">
+                                       <li class="dropdown-options__item">Option 1</li>
+                                       <li class="dropdown-options__item">Option 2</li>
+                                       <li class="dropdown-options__item">Option 3</li>
+                                       <li class="dropdown-options__item">Option 4</li>
+                                   </ul>
+                               </div>
+                           </div>
+                           <div class="col-6 col-last mb-1">
+                               <br/><br/><br/>
+                           </div>
+                           <div class="col-6 mb-1">
+                               <div class="dropdown dropdown--collapsed dropdown--error">
+                                   <span class="input-text__label">Dropdown Label</span>
+                                   <button class="dropdown-button icon-collapsed">Select a name</button>
+                                   <ul class="dropdown-options">
+                                       <li class="dropdown-options__item">Irene</li>
+                                       <li class="dropdown-options__item">Tubal</li>
+                                       <li class="dropdown-options__item">Michal</li>
+                                   </ul>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="mb-4">
+                       <h3 class="header-3">Text area</h3>
+                       <textarea class="text-area" placeholder="Text area placeholder" wrappers="4"></textarea>
+                   </div>
+               </div>
+           </main>
+       </div>
+        <footer class="site-footer row">
+            <div class="col-12"><a class="branding col-3" href="/">Site Name Here</a>
+                <nav class="site-nav col-9"><a href="index.html">Home</a> <a href="example-grids.html">Grids</a>
+                    <a href="example-modules.html">Modules</a> <a href="example-forms.html">Forms</a></nav>
+                <small class="site-credits">&copy; 2014 Site Name</small>
             </div>
-            <div class="g">
-              <article class="callout">
-                <img class="callout__media" src="images/fpo-icon.png">
-                <h3 class="callout__title">Feature</h3>
-                <p>This callout is very impressive, and should command your attention</p>
-              </article>
-            </div>
-            <div class="g">
-              <article class="callout">
-                <img class="callout__media" src="images/fpo-icon.png">
-                <h3 class="callout__title">Feature</h3>
-                <p>This callout is very impressive, and should command your attention</p>
-              </article>
-            </div>
-            <div class="g">
-              <article class="callout">
-                <img class="callout__media" src="images/fpo-icon.png">
-                <h3 class="callout__title">Feature</h3>
-                <p>This callout is very impressive, and should command your attention</p>
-              </article>
-            </div>
-          </div>
-        </section>
+        </footer>
+    </div>
+</div>
 
-        <section class="block container">
-          <h1>Here's a simple block section with some text</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, ipsam, minima, rerum asperiores eos amet beatae rem autem dignissimos excepturi molestias dolores delectus itaque aperiam corporis quibusdam deleniti cumque maxime.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, ipsam, minima, rerum asperiores eos amet beatae rem autem dignissimos excepturi molestias dolores delectus itaque aperiam corporis quibusdam deleniti cumque maxime.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, ipsam, minima, rerum asperiores eos amet beatae rem autem dignissimos excepturi molestias dolores delectus itaque aperiam corporis quibusdam deleniti cumque maxime.</p>
-        </section>
 
-        <section class="block container">
-          <div class="gw">
-            <div class="g md-one-half lg-three-fifths xl-four-sevenths">
-              <h2>This is a grid example.  This div has responsive width classes.</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, ipsam, minima, rerum asperiores eos amet beatae rem autem dignissimos excepturi molestias dolores delectus itaque aperiam corporis quibusdam deleniti cumque maxime.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, ipsam, minima, rerum asperiores eos amet beatae rem autem dignissimos excepturi molestias dolores delectus itaque aperiam corporis quibusdam deleniti cumque maxime.</p>
-            </div>
-            <div class="g md-one-half lg-two-fifths xl-three-sevenths">
-              <h2>This is a grid example.  This div also has responsive width classes.</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, ipsam, minima, rerum asperiores eos amet beatae rem autem dignissimos excepturi molestias dolores delectus itaque aperiam corporis quibusdam deleniti cumque maxime.</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, ipsam, minima, rerum asperiores eos amet beatae rem autem dignissimos excepturi molestias dolores delectus itaque aperiam corporis quibusdam deleniti cumque maxime.</p>
-            </div>
-          </div>
-        </section>
+<!--<div class="site">
 
-        <section class="block container">
-          <p><em>Skyline is intended for IE9+ with optional legacy support in the works</em></p>
-        </section>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <a class="branding" href="/">
+        &lt;!&ndash;<img class="branding__logo" src="images/fpo-logo.png" alt="Site Name">&ndash;&gt;
+        <h1 class="branding__wordmark">Site Name</h1>
+      </a>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="grids.html">Grids</a>
+        <a href="example-modules.html">Modules</a>
+        <a href="example-forms.html">Forms</a>
 
-      </main>
+      </nav>
+    </div>
+  </header>
+  <main class="site-main" role="main">
+    <h2>Tipografía</h2>
+    <div>
+      <h3>Encabezados</h3>
+      <h1 class="header-1">Encabezado 1</h1>
+      <h2 class="header-2">Encabezado 2</h2>
+      <h3 class="header-3">Encabezado 3</h3>
+      <h4 class="header-4">Encabezado 4</h4>
+      <p class="regular-text">Párrafo: fas fas away, behind the word mountains, fas from the countries Vokalia and Consonantia, there live the blind texts.
+      Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden
+      flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of
+      sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is
+      an almost unorthographic life </p>
+      <p class="small-text">Párrafo 2: fas fas away, behind the word mountains, fas from the countries Vokalia and Consonantia, there live the blind texts.
+        Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden
+        flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of
+        sentences fly into your mouth. Even the all-powerful Pointing has no control about the blind texts it is
+        an almost unorthographic life </p>
+    </div>
+  </main>
 
-      <footer class="site-footer">
-        <div class="container">
-          <a class="branding" href="/">Site Name Here</a>
-          <nav class="site-nav">
-            <a href="index.html">Home</a>
-            <a href="example-grids.html">Grids</a>
-            <a href="example-modules.html">Modules</a>
-            <a href="example-forms.html">Forms</a>
 
-          </nav>
-          <small class="site-credits">&copy; 2014 Site Name</small>
-        </div>
-      </footer>
 
-    </div><!--/.site-->
+</div>--><!--/.site-->
 
-  </body>
+</body>
 
 
 </html>

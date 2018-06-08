@@ -16,9 +16,11 @@
 // Code
 //
 code {
+  background: $color-offwhite;
+  display: block;
+  line-height: 1.5;
   vertical-align: middle;
   padding: .25em .5em;
-  background: rgba(193, 199, 208, .3);
 }
 
 // Pre

@@ -41,55 +41,61 @@
 
   <body>
 
-  <div class="site grid">
-    <header class="site-header col-xs-2">
-      <a class="branding" href="/">
-        <!--<img class="branding__logo" src="images/fpo-logo.png" alt="Site Name">-->
-        <h1 class="branding__wordmark">Site Name</h1>
-      </a>
-    </header>
-    <aside class="site-sidebar col-xs-2 col-l-4">
-
+  <div class="site container">
+<div class="wrapper">
+  <header class="site-header col-12 col-last">
+    <a class="branding" href="/">
+      <!--<img class="branding__logo" src="images/fpo-logo.png" alt="Site Name">-->
+      <h1 class="branding__wordmark">Site Name</h1>
+    </a>
+  </header>
+  <div class="wrapper">
+    <aside class="site-sidebar col-3">
       <nav class="site-nav">
-        <a class="site-nav__link" href="index.html">Home</a>
-        <a class="site-nav__link" href="grids.html">Grids</a>
-        <a class="site-nav__link" href="example-modules.html">Modules</a>
-        <a class="site-nav__link" href="example-forms.html">Forms</a>
+        <a class="site-nav__item" href="index.html">Home</a>
+        <a class="site-nav__item" href="grids.html">Grids</a>
+        <a class="site-nav__item" href="typography.html">Grids</a>
+        <a class="site-nav__item" href="form.html">Modules</a>
       </nav>
     </aside>
-    <main class="site-main col-xs-2 col-l-8" role="main">
+    <main class="site-main col-9 col-last" role="main">
 
-        <h3>HTML+FLOAT BASED GRID</h3>
-      <div class="grid">
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
-        <div class="col-xs-1 col-s-1 col-m-2 col-l-3">html+float</div>
+      <h3>HTML+FLOAT BASED GRID</h3>
+      <div class="row">
+        <div class="col-1">html+float</div>
+        <div class="col-1">html+float</div>
+        <div class="col-1">html+float</div>
+        <div class="col-1 col-s-last">html+float</div>
+        <div class="col-1">html+float</div>
+        <div class="col-1">html+float</div>
+        <div class="col-1">html+float</div>
+        <div class="col-1 col-s-last">html+float</div>
+        <div class="col-1">html+float</div>
+        <div class="col-1">html+float</div>
+        <div class="col-1">html+float</div>
+        <div class="col-1 col-s-last">html+float</div>
+        <div class="col-12">html+float</div>
       </div>
-      </main>
+    </main>
+  </div>
 
-      <footer class="site-footer col-xs-2">
-        <div class="">
-          <a class="branding col-1 col-l-3" href="/">Site Name Here</a>
-          <nav class="site-nav col-1 col-l-9">
-            <a href="index.html">Home</a>
-            <a href="example-grids.html">Grids</a>
-            <a href="example-modules.html">Modules</a>
-            <a href="example-forms.html">Forms</a>
 
-          </nav>
-          <small class="site-credits col-xs-2">&copy; 2014 Site Name</small>
-        </div>
-      </footer>
+  <footer class="site-footer col-12 col-last">
+    <div class="">
+      <a class="branding col-3" href="/">Site Name Here</a>
+      <nav class="site-nav col-9 col-last">
+        <a href="index.html">Home</a>
+        <a href="example-grids.html">Grids</a>
+        <a href="example-modules.html">Modules</a>
+        <a href="example-forms.html">Forms</a>
+
+      </nav>
+      <small class="site-credits col-12">&copy; 2014 Site Name</small>
+    </div>
+  </footer>
+
+</div>
+
 
     </div><!--/.site-->
 

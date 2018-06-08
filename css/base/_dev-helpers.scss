@@ -27,13 +27,13 @@
 //
 // Define color variables
 //
-$dev__color__default: $color__grey;
-$dev__color__xs: $color__sky-blue;
-$dev__color__sm: $color__green;
-$dev__color__md: $color__salmon;
-$dev__color__lg: $color__blue;
-$dev__color__xl: $color__purple;
-$dev__color__xxl: $color__brown;
+$dev__color-default: $color-grey;
+$dev__color-xs: $color-sky-blue;
+$dev__color-sm: $color-green;
+$dev__color-md: $color-salmon;
+$dev__color-lg: $color-blue;
+$dev__color-xl: $color-purple;
+$dev__color-xxl: $color-brown;
 //
 // Define background opacity 
 $dev__bg-opacity: .25;
@@ -56,27 +56,27 @@ $dev__bg-opacity: .25;
 .dev--highlight-elements {
   @include bp-at-least($breakpoint__xs)  { 
     [class*="-highlight"] { color: inherit; } 
-    .xs-highlight { color: $dev__color__xs; } 
+    .xs-highlight { color: $dev__color-xs; }
   }
   @include bp-at-least($breakpoint__sm)  { 
     [class*="-highlight"] { color: inherit; } 
-    .sm-highlight { color: $dev__color__sm; } 
+    .sm-highlight { color: $dev__color-sm; }
   }
   @include bp-at-least($breakpoint__md)  { 
     [class*="-highlight"] { color: inherit; } 
-    .md-highlight { color: $dev__color__md; } 
+    .md-highlight { color: $dev__color-md; }
   }
   @include bp-at-least($breakpoint__lg)  { 
     [class*="-highlight"] { color: inherit; } 
-    .lg-highlight { color: $dev__color__lg; } 
+    .lg-highlight { color: $dev__color-lg; }
   }
   @include bp-at-least($breakpoint__xl)  { 
     [class*="-highlight"] { color: inherit; } 
-    .xl-highlight { color: $color__purple; } 
+    .xl-highlight { color: $color-purple; }
   }
   @include bp-at-least($breakpoint__xxl) { 
     [class*="-highlight"] { color: inherit; } 
-    .xxl-highlight { color: $dev__color__xxl; } 
+    .xxl-highlight { color: $dev__color-xxl; }
   }
 }
 
@@ -106,38 +106,38 @@ $dev__bg-opacity: .25;
     }
     @include bp-at-least($breakpoint__xs) {
       &[class*="xs-"] > * {
-        border-color: $dev__color__xs;
-        background: rgba($dev__color__xs, $dev__bg-opacity);
+        border-color: $dev__color-xs;
+        background: rgba($dev__color-xs, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__sm) {
       &[class*="sm-"] > * {
-        border-color: $dev__color__sm;
-        background: rgba($dev__color__sm, $dev__bg-opacity);
+        border-color: $dev__color-sm;
+        background: rgba($dev__color-sm, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__md) {
       &[class*="md-"] > * {
-        border-color: $dev__color__md;
-        background: rgba($dev__color__md, $dev__bg-opacity);      
+        border-color: $dev__color-md;
+        background: rgba($dev__color-md, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__lg) {
       &[class*="lg-"] > * {
-        border-color: $dev__color__lg;
-        background: rgba($dev__color__lg, $dev__bg-opacity);
+        border-color: $dev__color-lg;
+        background: rgba($dev__color-lg, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__xl) {
       &[class*="xl-"] > * {
-        border-color: $color__purple;
-        background: rgba($color__purple, $dev__bg-opacity);
+        border-color: $color-purple;
+        background: rgba($color-purple, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__xxl) {
       &[class*="xxl-"] > * {
-        border-color: $dev__color__xxl;
-        background: rgba($dev__color__xxl, $dev__bg-opacity);
+        border-color: $dev__color-xxl;
+        background: rgba($dev__color-xxl, $dev__bg-opacity);
       }
     }
   }
@@ -146,38 +146,38 @@ $dev__bg-opacity: .25;
   .gw, .grid-wrap {
     @include bp-at-least($breakpoint__xs) {
       &[class*="xs-"][class*="-up"] > * > * {
-        border-color: $dev__color__xs;
-        background: rgba($dev__color__xs, $dev__bg-opacity);
+        border-color: $dev__color-xs;
+        background: rgba($dev__color-xs, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__sm) {
       &[class*="sm-"][class*="-up"] > * > * {
-        border-color: $dev__color__sm;
-        background: rgba($dev__color__sm, $dev__bg-opacity);
+        border-color: $dev__color-sm;
+        background: rgba($dev__color-sm, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__md) {
       &[class*="md-"][class*="-up"] > * > * {
-        border-color: $dev__color__md;
-        background: rgba($dev__color__md, $dev__bg-opacity);      
+        border-color: $dev__color-md;
+        background: rgba($dev__color-md, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__lg) {
       &[class*="lg-"][class*="-up"] > * > * {
-        border-color: $dev__color__lg;
-        background: rgba($dev__color__lg, $dev__bg-opacity);
+        border-color: $dev__color-lg;
+        background: rgba($dev__color-lg, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__xl) {
       &[class*="xl-"][class*="-up"] > * > * {
-        border-color: $color__purple;
-        background: rgba($color__purple, $dev__bg-opacity);
+        border-color: $color-purple;
+        background: rgba($color-purple, $dev__bg-opacity);
       }
     }
     @include bp-at-least($breakpoint__xxl) {
       &[class*="xxl-"][class*="-up"] > * > * { 
-        border-color: $dev__color__xxl;
-        background: rgba($dev__color__xxl, $dev__bg-opacity);
+        border-color: $dev__color-xxl;
+        background: rgba($dev__color-xxl, $dev__bg-opacity);
       }
     }
   }
@@ -205,46 +205,46 @@ $dev__bg-opacity: .25;
     bottom: 0;
     right: 0;
     padding: 1em;
-    border: 1px solid $dev__color__default;
-    background: rgba($dev__color__default, $dev__bg-opacity);
+    border: 1px solid $dev__color-default;
+    background: rgba($dev__color-default, $dev__bg-opacity);
     font-size: .25em;
     line-height: 1;
-    color: $dev__color__default;
+    color: $dev__color-default;
     @include bp-at-least($breakpoint__xs) {
       content: "XS";
-      color: $dev__color__xs;
-      background: rgba($dev__color__xs, $dev__bg-opacity);
-      border-color: $dev__color__xs;
+      color: $dev__color-xs;
+      background: rgba($dev__color-xs, $dev__bg-opacity);
+      border-color: $dev__color-xs;
     }
     @include bp-at-least($breakpoint__sm) {
       content: "SM";
-      color: $dev__color__sm;
-      background: rgba($dev__color__sm, $dev__bg-opacity);
-      border-color: $dev__color__sm;
+      color: $dev__color-sm;
+      background: rgba($dev__color-sm, $dev__bg-opacity);
+      border-color: $dev__color-sm;
     }
     @include bp-at-least($breakpoint__md) {
       content: "MD";
-      color: $dev__color__md;
-      background: rgba($dev__color__md, $dev__bg-opacity);
-      border-color: $dev__color__md;
+      color: $dev__color-md;
+      background: rgba($dev__color-md, $dev__bg-opacity);
+      border-color: $dev__color-md;
     }
     @include bp-at-least($breakpoint__lg) {
       content: "LG";
-      color: $dev__color__lg;
-      background: rgba($dev__color__lg, $dev__bg-opacity);
-      border-color: $dev__color__lg;
+      color: $dev__color-lg;
+      background: rgba($dev__color-lg, $dev__bg-opacity);
+      border-color: $dev__color-lg;
     }
     @include bp-at-least($breakpoint__xl) {
       content: "XL";
-      color: $dev__color__xl;
-      background: rgba($dev__color__xl, $dev__bg-opacity);
-      border-color: $dev__color__xl;
+      color: $dev__color-xl;
+      background: rgba($dev__color-xl, $dev__bg-opacity);
+      border-color: $dev__color-xl;
     }
     @include bp-at-least($breakpoint__xxl) {
       content: "XXL";
-      color: $dev__color__xxl;
-      background: rgba($dev__color__xxl, $dev__bg-opacity);
-      border-color: $dev__color__xxl;
+      color: $dev__color-xxl;
+      background: rgba($dev__color-xxl, $dev__bg-opacity);
+      border-color: $dev__color-xxl;
     }
   }
 }

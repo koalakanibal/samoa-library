@@ -35,59 +35,59 @@ $size: 16px !default;
 
 // Colors
 //
-$color__black: #000;
-$color__grey: #636363;
-$color__grey--light: #DDD;
-$color__offwhite: #F3F3F3;
-$color__white: #fff;
+$color-black: #000;
+$color-grey: #636363;
+$color-grey-light: #DDD;
+$color-offwhite: #F3F3F3;
+$color-white: #fff;
 
-$color__green: #a2bb60;
-$color__red: #B82346;
-$color__orange: #C56531;
-$color__sky-blue: #A4DAFA;
-$color__blue: #0779B4;
-$color__yellow: #E7C339;
-$color__green: #AABE3B;
-$color__navy: #1F3655;
+$color-green: #a2bb60;
+$color-red: #B82346;
+$color-orange: #C56531;
+$color-sky-blue: #A4DAFA;
+$color-blue: #0779B4;
+$color-yellow: #E7C339;
+$color-green: #AABE3B;
+$color-navy: #1F3655;
 
 
-$color__error: $color__red;
-$color__warning: $color__yellow;
-$color__info: $color__blue;
-$color__success: $color__green;
+$color-alert: $color-red;
+$color-warning: $color-yellow;
+$color-info: $color-blue;
+$color-success: $color-green;
 
-$color-primary: $color__blue;
-$color-active: $color__blue;
+$color-primary: $color-blue;
+$color-active: $color-blue;
 
 
 ///FONTS COLOR
-$color-font-primary: $color__grey;
-$color-font-disabled: $color__grey--light;
-$color-font-link: $color__blue;
+$color-font-primary: $color-grey;
+$color-font-disabled: $color-grey-light;
+$color-font-link: $color-blue;
 
 ////BUTTONS COLOR
-$color-btn: $color__blue;
+$color-btn: $color-blue;
 $color-btn-hover: #3994C3;
 $color-btn-disabled: #83BCD9;
-$color-font-btn: $color__white;
+$color-font-btn: $color-white;
 $color-font-btn-disabled: #C1DDEC;
-//$color-border: $color__blue;
+//$color-border: $color-blue;
 
-$color-btn-secondary: $color__white;
+$color-btn-secondary: $color-white;
 $color-btn-secondary-hover: #3994C3;
 $color-btn-secondary-disabled: #83BCD9;
-$color-btn-font-secondary: $color__blue;
-$color-border: $color__blue;
+$color-btn-font-secondary: $color-blue;
+$color-border: $color-blue;
 
 //BTN PANIC
-$color-btn-panic: $color__red;
+$color-btn-panic: $color-red;
 $color-btn-panic-hover: #C64F6B;
 $color-btn-panic-disabled: #DB91A2;
-$color-btn-font-panic: $color__white;
-$border-panic-color: $color__red;
+$color-btn-font-panic: $color-white;
+$border-panic-color: $color-red;
 
 //BORDER
-$color-border: $color__grey;
+$color-border: $color-grey;
 
 /* @fonts variables
 --------------------------------------------------------

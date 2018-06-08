@@ -1,0 +1,21 @@
+/**
+
+  @library-layout
+---------------------------------------------------------
+  layout/_library-layout.scss
+--------------------------------------------------------
+
+  Specifics styles only used for the layout of the library
+
+**/
+
+.color-swatch {
+  @include border-radius(50%);
+  @include font-size($font-small);
+  display: inline-block;
+  font-weight: $bold;
+  height: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  width: 4rem;
+}

@@ -97,7 +97,7 @@ input[type=radio] {
     font-weight: $regular;
 
     &::before {
-      background-color: $color__white;
+      background-color: $color-white;
       border: 5px solid $color-primary;
       box-shadow: none;
     }
@@ -113,8 +113,8 @@ input[type=radio] {
       pointer-events: none;
 
       &::before {
-        background-color: $color__grey--light;
-        border-color: $color__grey--light;
+        background-color: $color-grey-light;
+        border-color: $color-grey-light;
       }
     }
   }
