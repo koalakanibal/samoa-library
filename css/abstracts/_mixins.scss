@@ -1,3 +1,15 @@
+/**
+
+  @mixins
+-----------------------------------------------------------
+  _base/_mixins.scss
+-----------------------------------------------------------
+
+  All the mixins which can be useful for any project.
+  Explained one by one.
+
+-------------------------------------------------------- */
+
 /* Mixin font-size
 --------------------------------------------------------
 
@@ -166,7 +178,7 @@
   transition: $args;
 }
 
-/* Mixin Transition
+/* Mixin Transform
 --------------------------------------------------------
 1- Generic transform
   2- Rotate

@@ -1,3 +1,19 @@
+/**
+
+  @utilities classes mixin
+-----------------------------------------------------------
+  _base/_utilities.scss
+-----------------------------------------------------------
+
+ Static mixin classes to set colors
+
+
+  Usage:
+  @include text-color(COLOR);
+
+
+-------------------------------------------------------- */
+
 @mixin text-color($parent, $color) {
   #{$parent} {
     color: $color !important;
@@ -26,11 +42,19 @@
 
 @include text-color('.text-warning', $color-warning);
 
-@include text-color('.text-danger', $color-alert);
+@include text-color('.text-alert', $color-alert);
+
+@include text-color('.text-black', $color-black);
+
+@include text-color('.text-white', $color-white);
+
+@include text-color('.text-light', $color-offwhite);
+
+@include text-color('.text-orange', $color-orange);
 
 // Font color
 
-@include text-color('.text-gray-dark', $color-grey);
+@include text-color('.text-dark', $color-grey);
 
 
 //

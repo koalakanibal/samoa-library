@@ -5,8 +5,7 @@
   base/_vars.scss
 --------------------------------------------------------
 
-  Global variables are defined here.  Define your colors,
-  spacing and grid settings.
+  Global variables are defined here.
 
 -----------------------------------------------------  */
 
@@ -20,15 +19,7 @@ $size: 16px !default;
 
   All color variables are defined here.
 
-  We use real color names here.  Although naming something
-  like 'brand' is in fact more generic and reusable, we've
-  found that you end up creating variables like $brand-2,
-  $brand-alt, $brand-complimentary etc.  While coding,
-  it's too easy to forget what those mean.
-
-  If the design changes drastically and the brand changes
-  from, let's say, blue to green, just do a global
-  find/replace - that's what text editors are for.
+  We use real color names here and define globals later.
 
 ------------------------------------------------------ */
 
@@ -60,6 +51,11 @@ $color-primary: $color-blue;
 $color-active: $color-blue;
 
 
+//LINKS
+$color-link: $color-primary;
+$color-link-active: darken($color-primary, 20%);
+
+
 ///FONTS COLOR
 $color-font-primary: $color-grey;
 $color-font-disabled: $color-grey-light;
@@ -71,7 +67,6 @@ $color-btn-hover: #3994C3;
 $color-btn-disabled: #83BCD9;
 $color-font-btn: $color-white;
 $color-font-btn-disabled: #C1DDEC;
-//$color-border: $color-blue;
 
 $color-btn-secondary: $color-white;
 $color-btn-secondary-hover: #3994C3;
@@ -139,6 +134,8 @@ $XL: 1600px;
   if your baseline height is 1.125ems (which is 18px), that's
   the value of 1 $unit.
 
+  //UIDEV
+
 --------------------------------------------------------- */
 
-$unit: 1.125em;
+$unit: 1.125rem;

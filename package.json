@@ -1,16 +1,17 @@
 {
-  "name": "hungryk",
+  "name": "samoa-library",
   "version": "1.0.0",
   "description": "Styles library",
   "main": "index.html",
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "irene",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koalakanibal/samoa-library.git"
+  },
+  "author": "Irene",
   "license": "ISC",
-  "engines": {
-    "node": "0.10.x"
-  },
   "dependencies": {
     "node-sass": "^4.9.0"
   },
@@ -19,5 +20,9 @@
     "grunt-contrib-cssmin": "^2.2.1",
     "grunt-contrib-watch": "1.0.0",
     "grunt-sass": "2.0.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/koalakanibal/samoa-library/issues"
+  },
+  "homepage": "https://github.com/koalakanibal/samoa-library#readme"
 }

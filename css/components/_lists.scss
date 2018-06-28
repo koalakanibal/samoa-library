@@ -1,5 +1,8 @@
 /**
 
+//UIDEV
+  //REVISAR SI OS PARECE ÚTIL
+
   @lists
 --------------------------------------------------------
   elements/_lists.scss
@@ -43,10 +46,7 @@
 
 ul,
 ol {
-  padding-left: 0;
-  margin-left: 1*$unit;
-  margin-bottom: 1*$unit;
   li {
-    line-height: 2;
+
   }
 }

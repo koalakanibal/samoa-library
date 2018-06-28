@@ -1,13 +1,24 @@
-// breakpoints
-/*
-$XS: 600px;
-$S: 840px;
-$M: 1024px;
-$L: 1280px;
-$XL: 1600px;
-*/
+/**
 
-// media queries
+  @madiaqueries  mixin
+-----------------------------------------------------------
+  _base/_mixin-mediaqueries.scss
+-----------------------------------------------------------
+
+  Use this mixin to add breakpoints to your styles.
+  Following sizes:
+      $XS: 600px;
+      $S: 840px;
+      $M: 1024px;
+      $L: 1280px;
+      $XL: 1600px;
+
+
+  Usage:
+  @include media(M) { your scss code here};
+
+
+-------------------------------------------------------- */
 
 @mixin media($canvas) {
   @if $canvas == XS {

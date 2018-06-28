@@ -1,10 +1,11 @@
+@charset "UTF-8";
 /*
 - Vendors .................... All 3rd-party vendor tools (frameworks, libraries, helpers, normalize)
 - Utils/Abstracts ............ Font-face imports, reusable mixins, global variables, colors, etc.
 - Base ....................... Global styles (typo), reset file to override normalize
 - Components ................. Single reusable components
 - Layout ..................... Layout objects like grids, containers, unique combinations of components and base styles
--  **OPTIONAL** Modules ......... Objects created by combining elements
+- Modules ......... Objects created by combining elements
 -  **OPTIONAL** Themes .......... Special themes
 
 ---------------------------------------------------------  */
@@ -2712,8 +2713,7 @@ readers do not read off random characters that represent icons */
   base/_vars.scss
 --------------------------------------------------------
 
-  Global variables are defined here.  Define your colors,
-  spacing and grid settings.
+  Global variables are defined here.
 
 -----------------------------------------------------  */
 /* @colors
@@ -2721,15 +2721,7 @@ readers do not read off random characters that represent icons */
 
   All color variables are defined here.
 
-  We use real color names here.  Although naming something
-  like 'brand' is in fact more generic and reusable, we've
-  found that you end up creating variables like $brand-2,
-  $brand-alt, $brand-complimentary etc.  While coding,
-  it's too easy to forget what those mean.
-
-  If the design changes drastically and the brand changes
-  from, let's say, blue to green, just do a global
-  find/replace - that's what text editors are for.
+  We use real color names here and define globals later.
 
 ------------------------------------------------------ */
 /* @fonts variables
@@ -2759,7 +2751,20 @@ readers do not read off random characters that represent icons */
   if your baseline height is 1.125ems (which is 18px), that's
   the value of 1 $unit.
 
+  //UIDEV
+
 --------------------------------------------------------- */
+/**
+
+  @mixins
+-----------------------------------------------------------
+  _base/_mixins.scss
+-----------------------------------------------------------
+
+  All the mixins which can be useful for any project.
+  Explained one by one.
+
+-------------------------------------------------------- */
 /* Mixin font-size
 --------------------------------------------------------
 
@@ -2831,7 +2836,7 @@ readers do not read off random characters that represent icons */
      @include transition(color .3s ease);
 
 ------------------------------------------------------ */
-/* Mixin Transition
+/* Mixin Transform
 --------------------------------------------------------
 1- Generic transform
   2- Rotate
@@ -2860,13 +2865,27 @@ readers do not read off random characters that represent icons */
 
 
 --------------------------------------------------------- */
-/*
-$XS: 600px;
-$S: 840px;
-$M: 1024px;
-$L: 1280px;
-$XL: 1600px;
-*/
+/**
+
+  @madiaqueries  mixin
+-----------------------------------------------------------
+  _base/_mixin-mediaqueries.scss
+-----------------------------------------------------------
+
+  Use this mixin to add breakpoints to your styles.
+  Following sizes:
+      $XS: 600px;
+      $S: 840px;
+      $M: 1024px;
+      $L: 1280px;
+      $XL: 1600px;
+
+
+  Usage:
+  @include media(M) { your scss code here};
+
+
+-------------------------------------------------------- */
 @-webkit-keyframes dropdown-collapse {
   0% {
     border: 1px solid #dbd8bd; }
@@ -3102,6 +3121,17 @@ input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled 
   font-weight: 300;
   font-style: normal; }
 
+/**
+
+  @helper-classes
+--------------------------------------------------------
+  elements/_helper-classes.scss
+--------------------------------------------------------
+
+   helper classese provided some  extra functionality to an element.
+   They should be used in HTML
+
+------------------------------------------------------ */
 /* Text align class
 --------------------------------------------------------
 
@@ -3333,6 +3363,21 @@ input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled 
 .psides-4 {
   padding: 0 64px; }
 
+/**
+
+  @utilities classes mixin
+-----------------------------------------------------------
+  _base/_utilities.scss
+-----------------------------------------------------------
+
+ Static mixin classes to set colors
+
+
+  Usage:
+  @include text-color(COLOR);
+
+
+-------------------------------------------------------- */
 .text-white {
   color: #fff !important; }
 
@@ -3351,10 +3396,22 @@ input::-webkit-input-placeholder, input:-moz-placeholder, .input-text--disabled 
 .text-warning {
   color: #E7C339 !important; }
 
-.text-danger {
+.text-alert {
   color: #B82346 !important; }
 
-.text-gray-dark {
+.text-black {
+  color: #000 !important; }
+
+.text-white {
+  color: #fff !important; }
+
+.text-light {
+  color: #F3F3F3 !important; }
+
+.text-orange {
+  color: #C56531 !important; }
+
+.text-dark {
   color: #636363 !important; }
 
 .bg-primary {
@@ -3430,7 +3487,7 @@ body {
   elements/_text.scss
 --------------------------------------------------------
 
-  Some basic styles to paragraphs and
+  Some basic styles to paragraphs, headers and
   inline styles
 
 -----------------------------------------------------  */
@@ -3482,7 +3539,7 @@ p,
   font-size: 14px;
   font-size: 0.875rem;
   margin-bottom: 1em;
-  line-height: 1.40625em; }
+  line-height: 1.40625rem; }
 
 .small-text {
   font-size: 12px;
@@ -3509,17 +3566,16 @@ em {
 
   @buttons
 --------------------------------------------------------
-  elements/_buttons.scss
+  components/_buttons.scss
 --------------------------------------------------------
+  Default .btn
+  Set inline by default
 
-  Buttons are a common UI component in sites/apps.  They
-  are usually either anchor, button, or input elements
-  with a classname of 'btn'.  They provide an easily
-  identified clickable target.
+  Modifiers --icon
+            --large
+            --alert
+            --block
 
-  Buttons commonly have modifying classes that apply
-  specific styles.  Examples of these are .btn--large and
-  .btn--inline
 
   Example: Buttons using anchors
   <p><a href="#" class="btn">Regular Button</a></p>
@@ -3533,26 +3589,26 @@ button:focus, button:active {
   box-shadow: none; }
 
 .btn {
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  font-size: 14px;
+  font-size: 0.875rem;
   -webkit-appearance: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: inline-block;
   background: #0779B4;
+  border: 1px solid #0779B4;
   color: #fff;
   cursor: pointer;
-  border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border: 1px solid #0779B4;
-  font-size: 14px;
-  font-size: 0.875rem;
+  line-height: 1.2;
   text-decoration: none;
   padding: .625em 1.25em; }
-  .btn:hover {
+  .btn:hover, .btn--hover {
     background: #3994C3;
     border-color: #3994C3;
-    outline: none;
-    opacity: .85; }
+    outline: none; }
   .btn--disabled {
     pointer-events: none;
     background: #83BCD9;
@@ -3572,7 +3628,7 @@ button:focus, button:active {
   background: #fff;
   border: 1px solid #636363;
   color: #0779B4; }
-  .btn-secondary:hover {
+  .btn-secondary:hover, .btn-secondary--hover {
     background-color: #fff;
     border-color: #3994C3;
     color: #3994C3; }
@@ -3595,8 +3651,8 @@ button:focus, button:active {
   background: #B82346;
   border: 1px solid #B82346;
   color: #fff; }
-  .btn-panic:hover {
-    background-color: #B82346;
+  .btn-panic:hover, .btn-panic--hover {
+    background-color: #C64F6B;
     border-color: #C64F6B;
     color: #fff; }
   .btn-panic--disabled, .btn-panic:disabled {
@@ -3615,23 +3671,9 @@ button:focus, button:active {
 
 ------------------------------------------------------ */
 .btn--large {
-  font-size: 1.25em;
-  padding: 1.25em 2.75em; }
-
-/* @btn--inline
---------------------------------------------------------
-
-  A btn modifier, if this button is in a paragraph or
-  in anything else that has a defined font-size, this
-  modifier will make the btn inherit the font-size of
-  the parent.
-
-  Example: .btn--inline
-  <p>Here's some text <a class="btn btn--inline">Cool button</a> text keeps going</p>
-
------------------------------------------------------- */
-.btn--inline {
-  font-size: 1em; }
+  font-size: 18px;
+  font-size: 1.125rem;
+  padding: 1.25rem; }
 
 /* @btn--block
 --------------------------------------------------------
@@ -3657,23 +3699,10 @@ button:focus, button:active {
 /* @btn--icon
 --------------------------------------------------------
 
-  A btn modifier - makes the button display block, 100%
-  width and aligns the text to the center.  Removes left
-  and right padding since the text is center aligned, it
-  is not needed.  Actually sometimes having the padding
-  on the left and right causes problems if the centered
-  text is quite long - so we just remove it.
-
-  Example: .btn--icon
-  <button class="btn--icon ss-icon">Block button</button>
+ UIDEV
+ IN PROGRESS
 
 ------------------------------------------------------ */
-.btn--icon {
-  background: transparent;
-  border: none;
-  padding: 0;
-  font-size: 1em; }
-
 /**
 
   @code
@@ -3696,6 +3725,9 @@ code {
   padding: .25em .5em; }
 
 /**
+
+//UIDEV
+//REVISAR SI OS PARECE ÚTIL
 
   @forms
 ---------------------------------------------------------
@@ -4373,49 +4405,6 @@ label {
 
 /**
 
-  @headings
---------------------------------------------------------
-  elements/_headings.scss
---------------------------------------------------------
-
-  We set any base styles for any headings that have
-  no classnames.
-
-  Example: Headings
-  <h1>This is an h1 heading</h1>
-  <h2>This is an h2 heading</h2>
-  <h3>This is an h3 heading</h3>
-  <h4>This is an h4 heading</h4>
-  <h5>This is an h5 heading</h5>
-  <h6>This is an h6 heading</h6>
-
-  Additionally, we add classnames so you
-  can apply the styling of, for instance, an h1 to an h2.
-
-  Example: H1 styled like an H3
-  <h1 class="h3">This is an h1 but looks like an h3</h1>
-
------------------------------------------------------- */
-h1, .h1 {
-  margin-bottom: 1em; }
-
-h2, .h2 {
-  margin-bottom: 1em; }
-
-h3, .h3 {
-  margin-bottom: 1em; }
-
-h4, .h4 {
-  margin-bottom: 1em; }
-
-h5, .h5 {
-  margin-bottom: 1em; }
-
-h6, .h6 {
-  margin-bottom: 1em; }
-
-/**
-
    @hr
 --------------------------------------------------------
   elements/_hr.scss
@@ -4439,40 +4428,8 @@ hr {
 
 /**
 
-  @icons
----------------------------------------------------------
-  elements/_icons.scss
---------------------------------------------------------
-
-  Your icon set may vary. In this partial, you may wish
-  to load in a font icon set and add all the associated
-  css that goes with it. This would be the case if you
-  were using something like Symbolset or IcoMoon for
-  example.
-
---------------------------------------------------------- */
-/* @icon
---------------------------------------------------------
-
-  This is a basic icon element. We set some basic
-  structural styles and display styles to get the ball
-  rolling.
-
-  Example: Open Icon
-  <i class="icon icon--open">&plus;</i>
-
-  Example: Close Icon
-  <i class="icon icon--close">&times;</i>
-
------------------------------------------------------- */
-.icon {
-  color: inherit;
-  display: inline-block;
-  font-style: normal;
-  vertical-align: middle;
-  font-size: 1em; }
-
-/**
+//UIDEV
+  //REVISAR SI OS PARECE ÚTIL
 
   @images
 ---------------------------------------------------------
@@ -4548,20 +4505,20 @@ img {
 .img--right {
   width: auto;
   float: right;
-  margin-bottom: 1.125em;
-  margin-left: 1.125em; }
+  margin-bottom: 1.125rem;
+  margin-left: 1.125rem; }
 
 .img--left {
   width: auto;
   float: left;
-  margin-right: 1.125em;
-  margin-bottom: 1.125em; }
+  margin-right: 1.125rem;
+  margin-bottom: 1.125rem; }
 
 .img--center {
   width: auto;
   display: block;
   margin-right: auto;
-  margin-bottom: 1.125em;
+  margin-bottom: 1.125rem;
   margin-left: auto; }
 
 .img--right img,
@@ -4601,7 +4558,9 @@ img {
 
 ------------------------------------------------------ */
 a {
-  color: inherit; }
+  color: #0779B4; }
+  a:hover, a:focus {
+    color: #033752; }
 
 /* @webkit-tap-highlight
 --------------------------------------------------------
@@ -4612,49 +4571,53 @@ a {
 body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.35); }
 
-.site-nav {
-  margin-left: -1rem; }
-  .site-nav__item {
-    color: #0779B4;
-    border-left: 1.125em solid #DDD;
-    border-bottom: 1px solid #DDD;
-    height: 2.6rem;
-    line-height: 2.6rem;
-    padding-left: 1rem;
-    text-decoration: none; }
-
 /**
 
-  @quotes
---------------------------------------------------------
-  elements/_quotes.scss
---------------------------------------------------------
+//UIDEV
+  //REVISAR SI OS PARECE ÚTIL
 
-  Blockquotes and pull quotes
-
------------------------------------------------------  */
-/* @blockquote
+  @lists
+--------------------------------------------------------
+  elements/_lists.scss
 --------------------------------------------------------
 
-  Example:
-  <blockquote>
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-    <cite><a href="http://foo.com">The source</a></cite>
-  </blockquote>
+  Structure for lists
 
--------------------------------------------------------- */
-/* @pull-quote
---------------------------------------------------------
+  Example: Unordered List
+  <ul>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>
+      <ul>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+      </ul>
+    </li>
+  </ul>
 
-  Large quotes pulled from body text.
-
-  Example:
-  <blockquote class="pull-quote">
-    <p>This is an awesome pull quote!</p>
-  </blockquote>
+  Example: Ordered List
+  <ol>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>List item here</li>
+    <li>
+      <ol>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+        <li>Nested Item</li>
+      </ul>
+    </li>
+  </ol>
 
 -------------------------------------------------------- */
 /**
+
 
   @tables
 ---------------------------------------------------------
@@ -4756,9 +4719,13 @@ table {
 
 ------------------------------------------------------ */
 .table--striped tbody tr:nth-of-type(odd) {
-  background-color: #eee; }
+  background-color: #F3F3F3; }
 
 /* @GRID
+
+
+//UIDEV
+  //REVISAR SI OS PARECE ÚTIL
 --------------------------------------------------------
 
   1- Grid based on html using float
@@ -5019,7 +4986,7 @@ table {
 
 ------------------------------------------------------ */
 .branding {
-  margin: 0 auto 1.125em;
+  margin: 0 auto 1.125rem;
   text-decoration: none;
   display: block;
   text-align: center; }
@@ -5032,7 +4999,7 @@ table {
 @media only screen and (min-width: 1024px) {
   .branding__logo {
     float: left;
-    margin-right: 1.125em; } }
+    margin-right: 1.125rem; } }
 
 .branding__wordmark {
   font-size: 36px;
@@ -5059,6 +5026,17 @@ table {
   The main site navigation.
 
 -----------------------------------------------------  */
+.site-nav {
+  margin-left: -1rem; }
+  .site-nav__item {
+    color: #0779B4;
+    border-left: 1.125rem solid #DDD;
+    border-bottom: 1px solid #DDD;
+    height: 2.6rem;
+    line-height: 2.6rem;
+    padding-left: 1rem;
+    text-decoration: none; }
+
 /**
 
    @site
@@ -5115,7 +5093,7 @@ table {
   margin-left: auto;
   margin-right: auto;
   max-width: calc(100% - $base-size);
-  padding: 0 1.6875em;
+  padding: 0 1.6875rem;
   /*@include bp-at-least($breakpoint__sm) {
     padding: 0 3*$unit;
   }*/ }
@@ -5147,3 +5125,6 @@ table {
   line-height: 4rem;
   text-align: center;
   width: 4rem; }
+
+.color-list li {
+  padding: .268rem; }

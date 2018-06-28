@@ -7,7 +7,7 @@
 - Base ....................... Global styles (typo), reset file to override normalize
 - Components ................. Single reusable components
 - Layout ..................... Layout objects like grids, containers, unique combinations of components and base styles
--  **OPTIONAL** Modules ......... Objects created by combining elements
+- Modules ......... Objects created by combining elements
 -  **OPTIONAL** Themes .......... Special themes
 
 ---------------------------------------------------------  */
@@ -23,7 +23,7 @@
 //@import "abstracts/__abstracts-dir";
 @import "abstracts/vars",
         "abstracts/mixins",
-        //"abstracts/mixin-font-face-importer",
+        //"abstracts/mixin-font-face-importer", //NOT IN USE
         "abstracts/mixin-clearfix",
         "abstracts/mixin-mediaqueries",
         "abstracts/functions",
@@ -38,22 +38,19 @@
         "base/helper-classes",
         "base/utilities",
         "base/html",
-        "base/body";
+        "base/body",
+        "base/typography";
 
 //Components
 //@import "components/__components-dir";
-@import "components/typography",
+@import
         "components/buttons",
         "components/code",
         "components/forms",
-        "components/headings",
         "components/hr",
-        "components/icons",
         "components/images",
         "components/links",
-        "components/site-nav",
-        //"components/lists",
-        "components/quotes",
+        "components/lists",
         "components/tables";
 
 //Layout
@@ -61,6 +58,7 @@
 @import "layout/grid",
         "modules/site",
         "modules/site-header",
+        "modules/site-nav",
         "modules/site-sidebar",
         "modules/site-main",
         "layout/container",

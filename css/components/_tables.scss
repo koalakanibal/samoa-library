@@ -1,5 +1,6 @@
 /**
 
+
   @tables
 ---------------------------------------------------------
   elements/_tables.scss
@@ -121,6 +122,6 @@ td {
 // Striped tables
 .table--striped {
   tbody tr:nth-of-type(odd){
-    background-color: #eee;  // Or whatever color you want
+    background-color: $color-offwhite;  // Or whatever color you want
   }
 }
