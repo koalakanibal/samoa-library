@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de13cbbf-a777-47c5-ba01-1e80d64ff472" name="Default" comment="" />
+    <list default="true" id="de13cbbf-a777-47c5-ba01-1e80d64ff472" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -32,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package-lock.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package-lock.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="178">
-              <caret line="149" column="23" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="23" />
+              <caret line="823" column="9" selection-start-line="823" selection-start-column="5" selection-end-line="823" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -45,16 +48,16 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="16">
-              <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+              <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_grid.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/layout/_grid.scss">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="16">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="256">
+              <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -100,9 +103,7 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>col-</find>
-      <find />
-      <find />
+      <find>\&lt;footer class\=\&quot;site__footer col\-xs\-2\&quot;\&gt;\n        \&lt;div class\=\&quot;container\&quot;\&gt;\n            \&lt;a class\=\&quot;branding col\-1 col\-l\-3\&quot; href\=\&quot;\/\&quot;\&gt;Site Name Here\&lt;\/a\&gt;\n            \&lt;nav class\=\&quot;site\-nav col\-1 col\-l\-9\&quot;\&gt;\n                \&lt;a href\=\&quot;index\.html\&quot;\&gt;Home\&lt;\/a\&gt;\n                \&lt;a href\=\&quot;example\-grids\.html\&quot;\&gt;Grids\&lt;\/a\&gt;\n                \&lt;a href\=\&quot;example\-modules\.html\&quot;\&gt;Modules\&lt;\/a\&gt;\n                \&lt;a href\=\&quot;example\-forms\.html\&quot;\&gt;Forms\&lt;\/a\&gt;\n\n            \&lt;\/nav\&gt;\n            \&lt;small class\=\&quot;site\-credits col\-2\&quot;\&gt;\&amp;copy\; 2014 Site Name\&lt;\/small\&gt;\n        \&lt;\/div\&gt;\n    \&lt;\/footer\&gt;</find>
       <find>site__</find>
       <find>.315rem</find>
       <find>x</find>
@@ -130,11 +131,13 @@
       <find>list</find>
       <find>UI-DE</find>
       <find>$base-size</find>
+      <find>&quot;hoek&quot;: &quot;2.x.x&quot;</find>
+      <find>hoek</find>
     </findStrings>
     <replaceStrings>
       <replace>$color-border</replace>
       <replace />
-      <replace />
+      <replace>&lt;footer class=&quot;site__footer col-xs-2&quot;&gt;        &lt;div class=&quot;container&quot;&gt;            &lt;a class=&quot;branding col--xs-1 col-l-3&quot; href=&quot;/&quot;&gt;Site Name Here&lt;/a&gt;            &lt;nav class=&quot;site-nav col-xs-1 col-l-9&quot;&gt;                &lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;                &lt;a href=&quot;example-grids.html&quot;&gt;Grids&lt;/a&gt;                &lt;a href=&quot;example-modules.html&quot;&gt;Modules&lt;/a&gt;                &lt;a href=&quot;example-forms.html&quot;&gt;Forms&lt;/a&gt;            &lt;/nav&gt;            &lt;small class=&quot;site-credits col-2&quot;&gt;&amp;copy; 2014 Site Name&lt;/small&gt;        &lt;/div&gt;    &lt;/footer&gt;</replace>
       <replace>site-</replace>
       <replace>$base-size</replace>
       <replace>wrapper</replace>
@@ -151,6 +154,7 @@
       <replace>color-black</replace>
       <replace>color-</replace>
       <replace>bg-color</replace>
+      <replace>&quot;hoek&quot;: &quot;4.2.1&quot;</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/css/vendors/fontawesome_</dir>
@@ -163,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/base/_spacing-helper.scss" />
         <option value="$PROJECT_DIR$/css/base/_fonts.scss" />
         <option value="$PROJECT_DIR$/css/layout/_container.scss" />
         <option value="$PROJECT_DIR$/css/modules/_site.scss" />
@@ -214,6 +217,7 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package-lock.json" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -363,12 +367,12 @@
       <workItem from="1528872855176" duration="173000" />
       <workItem from="1530092802722" duration="1511000" />
       <workItem from="1530165607660" duration="4798000" />
-      <workItem from="1530182678897" duration="653000" />
+      <workItem from="1530182678897" duration="1234000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155687000" />
+    <option name="totallyTimeSpent" value="156268000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -383,7 +387,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3121917" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3121917" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32889965" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.54968286" side_tool="true" weight="0.22545454" />
@@ -391,7 +395,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.49753347" weight="0.32769045" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4503171" visible="true" weight="0.22545454" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.4503171" visible="true" weight="0.22545454" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -433,7 +437,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/example-forms.html" />
     <entry file="file://$PROJECT_DIR$/example-grids.html" />
     <entry file="file://$PROJECT_DIR$/css/abstracts/_mixin-breakpoints.scss" />
     <entry file="file://$PROJECT_DIR$/css/abstracts/_functions.scss">
@@ -663,13 +666,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="1" column="5" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -680,7 +676,21 @@
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
-          <caret line="149" column="23" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="23" />
+          <caret line="823" column="9" selection-start-line="823" selection-start-column="5" selection-end-line="823" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="5" lean-forward="true" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="11" selection-start-line="16" selection-start-column="11" selection-end-line="16" selection-end-column="11" />
         </state>
       </provider>
     </entry>
