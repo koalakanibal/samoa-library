@@ -9,10 +9,18 @@ Step by step to install the project.
 
 ```
 git clone https://github.com/koalakanibal/samoa-library.git
+
 ```
+### Install Grunt's command line interface CLI
+
+```
+npm install -g grunt-cli
+```
+
 
 ### Initialize the project
 
 ```
 npm install
 ```
+
